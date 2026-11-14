@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кран из картона | Конструктор 2D, v16</title>
+<style>
+:root{--ink:#183747;--ink2:#476779;--blue:#155e81;--blue2:#e9f3f9;--line:#c8d7df;--surface:#ffffff;--bg:#eff3f5;--orange:#ac6423;--green:#1d7567;font-family:Arial,Helvetica,sans-serif;color:var(--ink);font-size:16px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #74b2d9;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.5}
+header{background:white;border-bottom:1px solid var(--line)}.bar{max-width:1500px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}h1{font-size:25px;margin:0 0 4px;font-weight:750}.subline{color:#597484;font-size:14px}h2{font-size:23px;margin:0 0 7px}h3{font-size:17px;margin:16px 0 7px}p{line-height:1.5;margin:0 0 12px}.page{max-width:1920px;margin:auto;padding:17px 22px 40px}.panel{border:1px solid #d5e0e5;border-radius:12px;background:white;overflow:hidden}.controls{padding:18px 20px;margin-bottom:15px}.headingrow{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:15px}.headingrow h2{margin:0;font-size:19px}.micro{font-size:13px;color:#5d7785}.fieldgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.control{padding:13px;border-radius:10px;border:1px solid #d6e2e9;background:#f8fbfc;min-width:0}.ctop{display:flex;align-items:center;justify-content:space-between;gap:8px}.ctop label{font-weight:700;font-size:14px}.minmax{color:#65808f;font-size:12px;white-space:nowrap}.stepper{display:grid;grid-template-columns:39px minmax(0,1fr) 39px;gap:6px;margin-top:11px;align-items:stretch}.smallbtn{background:white;color:var(--blue);border:1px solid #bfd2df;border-radius:7px;font-size:24px;line-height:1;min-height:40px}.valuefield{display:flex;justify-content:center;align-items:center;border:1px solid #bfd2df;background:white;border-radius:7px;min-width:0}.valuefield input{border:0;outline:none;min-width:0;width:68px;text-align:right;font-size:22px;font-weight:700;color:#17465f;background:transparent;padding:5px 0}.unit{font-size:13px;margin:0 8px 0 4px;color:#587080}.control input[type=range]{display:block;width:100%;margin:11px 0 0;accent-color:#155e81;cursor:pointer}.topmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}.pill{background:#ecf3f7;border-radius:100px;padding:7px 11px;font-size:13px;color:#35576c}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{background:#155e81;border:1px solid #155e81;color:white;padding:10px 14px;border-radius:8px;font-weight:700}.btn.secondary{background:#eff5f8;border-color:#d4e2ea;color:#285a75}.btn.ghost{background:white;border-color:#cbdce5;color:#285a75}.btn:hover{filter:brightness(.96)}.tabs{display:flex;gap:7px;overflow:auto;background:#fff;padding:12px 15px;border:1px solid #d5e0e5;border-radius:11px;margin-bottom:14px}.tab{white-space:nowrap;border:1px solid #d6e3ea;border-radius:8px;background:#f4f8fa;padding:11px 15px;color:#355e77;font-weight:700}.tab.active{background:#155e81;border-color:#155e81;color:#fff}.content{padding:20px}.content>section{display:none}.content>section.active{display:block}.lead{font-size:15px;color:#527083;max-width:900px;margin-bottom:16px}.paper{border:1px solid #bacfdb;background:white;border-radius:6px;overflow:hidden}.paper svg{display:block;width:100%;height:auto}.overviewgrid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(250px,.7fr);grid-template-areas:"side front" "top top";gap:14px;align-items:stretch}.overviewleft{display:contents}.overviewleft>.drawingbox:first-child{grid-area:side}.overviewleft>.drawingbox:nth-child(2){grid-area:top}.paperhead{font-size:15px;font-weight:700;margin:0 0 8px}.drawingbox{min-width:0}.paper.large svg{max-height:72vh}.paper.medium svg{max-height:57vh}.frontbox{display:flex;flex-direction:column}.frontbox .paper{flex:1 1 auto;min-height:0;display:block}.frontbox .paper svg{max-height:none}.overviewgrid #viewTop{width:100%}.overviewgrid #viewTop svg{width:100%;max-width:100%}.spec{border-top:1px solid #deeaef;padding:12px 15px;font-size:13px;line-height:1.5;background:#f8fbfc}.twocol{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.52fr);gap:15px}.data{border-collapse:collapse;width:100%;font-size:13px}.data th,.data td{padding:7px 8px;border-bottom:1px solid #deeaef;text-align:left}.data th{background:#edf5f8;font-size:12px}.data td{font-variant-numeric:tabular-nums}.data td:last-child{text-align:right}.twotables{display:grid;grid-template-columns:1fr 1fr;gap:12px}.boxnote{border-left:3px solid #2b779e;background:#eff6fa;padding:11px 13px;font-size:14px;line-height:1.5;margin-top:12px}.boxwarning{border-left:3px solid #b78230;background:#fff8e9;padding:11px 13px;font-size:14px;line-height:1.5;margin-top:12px}.drawtitle{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:9px 0 11px}.drawtitle h3{margin:0}.mono{font-variant-numeric:tabular-nums}.tablewrap{max-height:570px;overflow:auto}.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.part{border:1px solid #d9e4ea;border-radius:9px;padding:12px;background:#f8fbfc}.part strong{display:block;margin-bottom:5px;font-size:14px}.part small{line-height:1.4;color:#597485}.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.step{padding:15px;border:1px solid #d4e2e8;border-radius:10px;display:flex;gap:13px;align-items:start}.stepnumber{display:flex;align-items:center;justify-content:center;flex:0 0 32px;background:#155e81;color:white;font-weight:700;width:32px;height:32px;border-radius:100px}.step h3{margin:2px 0 6px}.step p{font-size:14px;margin:0;color:#365568}.step .stepcheck{margin-top:10px;display:flex;gap:7px;font-size:13px;color:#35566b;align-items:center}.step input[type=checkbox]{width:18px;height:18px;accent-color:#155e81}.trialgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:17px}.challenge{border:1px solid #d3e1e7;background:#f7fafb;border-radius:10px;padding:18px}.challenge h3{margin-top:0}.massrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.massrow input[type=range]{accent-color:#155e81;max-width:320px;flex:1}.massnum{font-size:22px;font-weight:750;color:#135d83}.tokenrow{display:flex;flex-wrap:wrap;gap:9px;margin:10px 0 14px}.token{border:2px solid #b5cfdc;background:#fff;border-radius:11px;padding:12px 15px;color:#1d5e7b;font-size:19px;font-weight:750;min-width:78px}.token small{font-size:12px;display:block;font-weight:400}.token:hover{border-color:#135b82;background:#f2f8fc}.prediction{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 15px}.prediction label{display:flex;align-items:center;gap:7px;border:1px solid #cbdbe3;border-radius:8px;padding:10px 12px;background:white;font-size:14px;cursor:pointer}.prediction input{accent-color:#155e81}.result{border-radius:9px;border:1px solid #d7e4ea;background:white;padding:14px;min-height:100px;margin-top:12px;font-size:14px;line-height:1.55}.result.good{border-color:#87bcb1;background:#f0faf6}.result.warn{border-color:#ddbf85;background:#fff8ed}.resultsvals{display:grid;grid-template-columns:1fr auto;gap:8px;font-size:14px;margin-bottom:14px}.resultsvals b{text-align:right}.leverpaper{border:1px solid #bfd5e0;border-radius:7px;overflow:hidden;margin:10px 0}.leverpaper svg{display:block;width:100%;height:auto}.trialform{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.trialform label{font-size:13px;font-weight:700}.trialform input,.trialform select{min-height:40px;padding:5px 9px;border:1px solid #bfd2dc;border-radius:7px;background:#fff}.trialform input{width:100px}.trialtable{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}.trialtable th,.trialtable td{padding:8px;border-bottom:1px solid #e0e9ed;text-align:left}.trialtable th{background:#edf5f8}details{font-size:14px;margin-top:15px}summary{cursor:pointer;color:#155e81;font-weight:700}#motionLayer{pointer-events:none}@media print{#motionLayer{display:none!important}}footer{font-size:12px;color:#68818f;padding:17px 22px;text-align:center}
+/* SVG style; coordinate system is drawing millimeters, never a printable cutting template */
+.paper svg .cut{stroke:#175e82;stroke-width:1.15;fill:#eaf4f9;stroke-linejoin:round}.paper svg .cutPlain{stroke:#175e82;stroke-width:1.1;fill:#edf5fa}.paper svg .hole{fill:#fff;stroke:#b96740;stroke-width:.8}.paper svg .axle{stroke:#ae7636;stroke-width:1.75;fill:none}.paper svg .flange{fill:#eed9b5;stroke:#a77535;stroke-width:.8}.paper svg .accent{stroke:#216b8b;fill:none;stroke-width:1}.paper svg .dim{stroke:#517487;stroke-width:.5;fill:none}.paper svg .guide{stroke:#7da0b1;stroke-width:.45;stroke-dasharray:2.5 2.2;fill:none}.paper svg .title{fill:#163f57;font:bold 9px Arial, sans-serif}.paper svg .txt{fill:#31556b;font:7.4px Arial,sans-serif}.paper svg .small{fill:#47697b;font:6.5px Arial,sans-serif}.paper svg .label{fill:#2d5368;font:7px Arial,sans-serif;text-anchor:middle}.paper svg .number{fill:#2f6079;font:6px Arial,sans-serif}.paper svg .callout{fill:#fff;fill-opacity:.93;stroke:#bfd3dc;stroke-width:.45}.paper svg .critical{fill:#ad6532;font:7px Arial,sans-serif}
+@media(max-width:1080px){.fieldgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.twocol,.trialgrid{grid-template-columns:1fr}.parts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:730px){.bar{padding:13px 14px;align-items:start;flex-direction:column}.page{padding:12px 10px}.controls{padding:13px}.fieldgrid{grid-template-columns:1fr 1fr;gap:8px}.ctop{align-items:start;flex-direction:column;gap:3px}.control{padding:10px}.smallbtn{min-height:34px}.stepper{grid-template-columns:34px minmax(0,1fr) 34px}.valuefield input{width:50px;font-size:19px}.content{padding:13px}.overviewgrid{grid-template-columns:minmax(0,1fr);grid-template-areas:"side" "front" "top"}.frontbox .paper svg{max-height:none}.steps,.parts{grid-template-columns:1fr}.twotables{grid-template-columns:1fr}.paper.large svg{max-height:none}}
+@media print{@page{size:A4 landscape;margin:9mm}header,.controls,.tabs,.no-print,footer{display:none!important}body{background:white}.page{padding:0;max-width:none}.panel{border:none;overflow:visible}.content{padding:0}.content>section{display:none!important}.content>section.active{display:block!important}.paper{break-inside:avoid;overflow:visible;border:1px solid #aaa}.paper svg{max-height:154mm!important}.overviewgrid{grid-template-columns:2fr .8fr;grid-template-areas:"side front" "top top"}.frontbox .paper{height:auto!important}.steps{grid-template-columns:1fr 1fr}.spec,.boxwarning{font-size:9pt}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+.winchgrid .paper svg .title{font-size:12px}.winchgrid .paper svg .txt{font-size:11px}.winchgrid .paper svg .small{font-size:9.5px}.winchgrid .paper svg .label{font-size:9px}.winchgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px;align-items:start}.mechanic-card{min-width:0;border:1px solid #d3e1e7;border-radius:10px;padding:15px;background:#f7fafb}.mechanic-card h3{margin:0 0 12px}.mechanic-text{font-size:15px;line-height:1.55;margin-top:12px;color:#34566b}.build-order{background:#f8fbfd;border:1px solid #d4e2e8;padding:14px 20px;border-radius:10px;margin-top:15px}.build-order ol{padding-left:23px;margin:8px 0}.build-order li{margin:8px 0;line-height:1.5;font-size:15px}.formula-card{border:1px solid #c7dce6;background:#fff;padding:14px;border-radius:9px;margin:10px 0 17px}.formula-note{font-size:14px;color:#466579;line-height:1.45;margin-bottom:12px}.formula-label{font-size:14px;font-weight:700;margin:10px 0 7px}.mathline{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#173f58;font-size:clamp(17px,1.5vw,23px);font-weight:700;line-height:1.35}.mathline sub{font-size:65%}.answerfield{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:#466579}.answerfield input{width:100px;border:1px solid #a7c6d8;border-radius:7px;font-size:21px;padding:7px 9px;color:#184761;background:#fff}.calc-feedback{margin-top:9px;color:#476879;font-size:14px;min-height:22px;line-height:1.5}.calc-feedback.correct{color:#176449}.calc-feedback.incorrect{color:#a25824}.counterline{background:#eaf3f8;padding:9px 12px;border-radius:7px;margin:6px 0 13px}.moment-bars{display:grid;gap:15px;margin:12px 0 20px}.moment-bars>div{min-width:0}.moment-bars span{font-size:14px}.moment-bars strong{float:right;font-size:14px}.momenttrack{margin-top:7px;background:#e7eff3;border-radius:6px;height:16px;overflow:hidden}.momentfill{height:100%;transition:width .2s ease;min-width:0}.momentfill.load{background:#6eabc9}.momentfill.back{background:#d6a465}.supportcard{grid-column:1 / -1}.supportcard .paper svg{max-width:930px}@media(max-width:1160px){.winchgrid{grid-template-columns:1fr}}@media(max-width:600px){.mathline{font-size:17px;gap:7px}.answerfield input{width:81px;font-size:18px}.mechanic-card{padding:10px}}
+
+/* V9: controls next to the drawing, compact input and a consistent drawing sheet */
+.workspace{display:grid;grid-template-columns:278px minmax(0,1fr);gap:15px;align-items:start}
+.workspace .controls{position:sticky;top:12px;margin-bottom:0;padding:16px;max-height:calc(100vh - 24px);overflow-y:auto}
+.workspace .workarea{min-width:0}
+.controls .fieldgrid{display:grid;grid-template-columns:1fr;gap:10px}
+.controls .headingrow{display:block;margin-bottom:13px}
+.controls .headingrow h2{font-size:19px;margin-bottom:7px}
+.controls .headingrow .micro{line-height:1.4;display:block}
+.controls .control{padding:10px}
+.controls .control .ctop{gap:5px;align-items:center;flex-direction:row}
+.controls .control .minmax{font-size:11px}
+.controls .control .stepper{margin-top:7px}
+.controls .control input[type=range]{margin-top:8px}
+.controls .topmeta{display:grid;gap:6px}
+.controls .pill{border-radius:6px;line-height:1.35;font-size:12px}
+.overviewgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(240px,.65fr);grid-template-areas:"side front" "top top";gap:14px;align-items:stretch}
+.overviewgrid>.drawingbox:first-child{grid-area:side}
+.overviewgrid>.frontbox{grid-area:front;display:flex;flex-direction:column;min-width:0}
+.overviewgrid>.topbox{grid-area:top}
+.frontbox .paper{flex:1;min-height:0}
+.frontbox svg{max-height:none}
+.specgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(290px,.95fr);gap:15px;margin-top:16px;align-items:start}
+.holepanel{border:1px solid #d8e5eb;padding:12px;border-radius:8px;background:#fbfdfe}
+.holepanel .data{font-size:13px}
+.holepanel .data th,.holepanel .data td{padding:7px 6px}
+.holepanel .data td:last-child{text-align:left}
+.holepanel details .data td:last-child{text-align:right}
+.trial-hero{border:1px solid #d3e1e7;background:#f8fbfd;border-radius:10px;padding:20px;margin-bottom:16px}
+.trial-hero h3{margin:0 0 12px;font-size:18px}
+.trial-hero .leverpaper{background:white;margin:0 0 16px}
+.trial-hero .leverpaper svg{width:100%;height:auto;min-height:300px;max-height:480px}
+.trial-hero .moment-bars{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.trialgrid{align-items:start;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)}
+.trialgrid .challenge{min-width:0}
+.trialgrid .formula-card{overflow:hidden}
+@media(max-width:1180px){.workspace{grid-template-columns:235px minmax(0,1fr)}.specgrid{grid-template-columns:1fr}.overviewgrid{grid-template-columns:minmax(0,1.5fr) minmax(170px,.65fr)}.trialgrid{grid-template-columns:1fr}}
+@media(max-width:860px){.workspace{grid-template-columns:1fr}.workspace .controls{position:static;max-height:none;overflow:visible}.controls .fieldgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.controls .topmeta{display:flex}.overviewgrid{grid-template-columns:minmax(0,1.5fr) minmax(170px,.65fr)}}
+@media(max-width:590px){.controls .fieldgrid{grid-template-columns:1fr 1fr}.controls .control .ctop{flex-direction:column;align-items:flex-start}.overviewgrid{grid-template-columns:1fr;grid-template-areas:"side" "front" "top"}.frontbox .paper{flex:auto}.trial-hero{padding:11px}.trial-hero .leverpaper svg{min-height:180px}.trial-hero .moment-bars{grid-template-columns:1fr}.content{padding:10px}}
+@media print{.workspace{display:block}.workspace .controls{display:none!important}.specgrid{grid-template-columns:1fr 1fr}.overviewgrid{grid-template-columns:1.5fr .65fr;grid-template-areas:"side front" "top top"}.trial-hero .leverpaper svg{max-height:120mm}}
+
+/* V11: winch support detail belongs to the first-page drawings */
+.winch-support-overview{min-width:0;max-width:100%;}
+.winch-support-overview .paper{width:100%;}
+.winch-support-overview .paper svg{width:100%;height:auto;max-width:900px;}
+.winch-support-overview .draw-foot{margin-top:9px;font-size:14px;line-height:1.5;}
+/* V10: all dimensions editable on the first page only */
+.workspace{display:grid;grid-template-columns:285px minmax(0,1fr);gap:16px;align-items:start}
+.workspace .controls{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;padding:17px;margin:0}
+.workspace .controls .fieldgrid{display:grid;grid-template-columns:1fr;gap:10px}
+.workspace .controls .headingrow{display:block}.workspace .controls .control{padding:10px}
+.workspace .controls .ctop{align-items:center}.workspace .controls .stepper{margin-top:9px}
+.workspace .controls .topmeta{display:grid;gap:6px}.workspace .controls .pill{border-radius:6px;line-height:1.4}
+.workspace .workarea{min-width:0}
+.workspace:not(.show-geometry){display:block}
+.workspace:not(.show-geometry) .controls{display:none}
+.workspace:not(.show-geometry) .workarea{width:100%}
+/* Page 1: assembly elevation directly above the single base plan */
+.page-hero{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:17px}
+.page-hero h2{margin:0 0 8px}.page-hero p{font-size:15px;color:#4d6b7e;max-width:680px;margin:0}
+.motion-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.motion-actions #liftInfo{font-size:12px;color:#557488;text-align:right;max-width:280px}
+.drafting-layout{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(300px,.9fr);gap:16px;align-items:start}.overview-wide{grid-column:1 / -1}.overview-wide .paper svg{max-height:none}
+.drafting-stack{display:flex;flex-direction:column;gap:19px;min-width:0}
+.drafting-info{display:flex;flex-direction:column;gap:20px;min-width:0}
+.drafting-layout .paperhead{font-size:15px;margin:0 0 8px}
+.drafting-layout .frontbox .paper svg{max-height:450px}
+.drafting-layout .holepanel{border:1px solid #d3e1e8;background:#fbfdfe;border-radius:9px;padding:16px}
+.drafting-layout .holepanel .data{font-size:12px;table-layout:fixed}
+.drafting-layout .holepanel .data th:nth-child(1){width:11%}.drafting-layout .holepanel .data th:nth-child(2),.drafting-layout .holepanel .data th:nth-child(3){width:17%}
+.drafting-layout .holepanel .data th,.drafting-layout .holepanel .data td{padding:6px 5px}
+.drafting-layout .holepanel .data td:last-child{text-align:left;overflow-wrap:anywhere}
+.drafting-layout .holepanel .tablewrap{overflow:visible;max-height:none}
+.draw-foot{font-size:13px;color:#476c80;line-height:1.45;margin-top:9px}
+/* Brand-new counterweight lab: no previous sliders, balance bars, token buttons, answer fields or trial table. */
+.field-study{--lab:#203c4a;--slate:#638090}
+.lab-heading{border-bottom:1px solid #ccdae1;padding:8px 2px 18px;margin-bottom:18px}
+.lab-kicker,.lab-notes-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.5px;color:#526e80}
+.lab-heading h2{font-size:clamp(26px,2.6vw,38px);margin:8px 0}.lab-heading p{max-width:860px;color:#4a6a7b;font-size:16px}
+.lab-masses{display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px;align-items:center;padding:14px 0 20px}
+.lab-masses-title{display:flex;flex-direction:column;gap:8px}.lab-masses-title b{font-size:18px}.lab-masses-title span{font-size:13px;color:#607c8c}
+.lab-mass-options{display:flex;gap:12px;flex-wrap:wrap}
+.lab-mass-options button{background:#fff;border:1.5px solid #c7d8e1;color:#2a536a;border-radius:14px;padding:10px 17px;display:flex;align-items:center;gap:12px;min-height:74px;min-width:135px;position:relative}
+.lab-mass-options button[aria-pressed="true"]{border-color:#175e81;background:#e8f4fa;box-shadow:0 0 0 1px #175e81}
+.lab-mass-options strong{font-size:22px;font-variant-numeric:tabular-nums}.lab-mass-options small{font-size:12px;color:#5d7888}
+.mass-figure{display:block;background:#8dbbcf;border:2px solid #337b97;border-radius:6px 6px 4px 4px;width:22px;height:21px;position:relative}
+.mass-figure:before{content:"";position:absolute;top:-7px;left:6px;width:7px;height:5px;border:2px solid #337b97;border-bottom:0;border-radius:4px 4px 0 0}
+.mid-figure{width:27px;height:30px}.large-figure{width:31px;height:38px}
+.lab-main{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(360px,.85fr);border:1px solid #c6d9e3;border-radius:14px;overflow:hidden;background:#fff}
+.lab-diagram{min-width:0;background:#f8fcfe;padding:18px 20px;display:flex;flex-direction:column}
+.lab-diagram-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.lab-diagram-head b{font-size:18px}.lab-diagram-head span{font-size:13px;color:#5a7a8b}
+.lab-crane{width:100%;flex:1;min-height:320px;display:flex;align-items:center}
+.lab-crane svg{display:block;width:100%;height:auto;max-height:510px}
+.lab-legend{font-size:13px;color:#5e7c8d;line-height:1.5;margin:0}
+.lab-notes{border-left:1px solid #c6d9e3;background:#fff;padding:26px 26px 20px;display:flex;flex-direction:column;gap:14px}
+.lab-notes h3{font-size:24px;margin:0;line-height:1.2}.lab-notes p{font-size:15px;color:#526f80;line-height:1.55;margin:0}
+.lab-mathline{font-size:clamp(17px,1.6vw,25px);font-weight:700;line-height:1.65;padding:9px 0;border-bottom:1px solid #d6e3e9;white-space:normal;font-variant-numeric:tabular-nums}
+.lab-solve{border-bottom:none}.lab-mathline small{display:block;font-size:12px;color:#6c8795;font-weight:400;line-height:1.4}
+.lab-answerbox{margin-top:4px;background:#f0f7fa;border:1px dashed #acc8d7;border-radius:9px;padding:15px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-size:14px;color:#416276}
+.answer-reveal{background:white;border:1px solid #afc9d7;border-radius:7px;color:#1e5c7b;font-weight:700;font-size:15px;padding:10px 15px}
+#labSolution{font-size:16px;font-weight:700;color:#185b79;line-height:1.5}
+.lab-equation-note{color:#566f7c;font-size:13px;line-height:1.5}
+.lab-workbench{border:1px solid #cedee5;border-top:none;border-radius:0 0 14px 14px;display:grid;grid-template-columns:minmax(270px,.65fr) minmax(0,1.35fr);gap:0;overflow:hidden}
+.lab-workbench h3{font-size:21px;margin:0 0 9px}.lab-workbench p{font-size:15px;color:#536d7e;line-height:1.5}
+.dial-column{padding:24px 24px 21px;background:#edf5f8;border-right:1px solid #c6d9e3}
+.mass-dial{display:flex;justify-content:center;margin:8px auto}.mass-dial svg{display:block;width:min(100%,315px);height:auto;touch-action:none;cursor:grab;outline:none}.mass-dial svg:active{cursor:grabbing}
+.dial-help{text-align:center;font-size:12px;color:#5b7686}
+.lab-test-column{padding:25px 26px;background:#fff}
+.lab-current{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:18px 0;font-size:15px}.lab-current span{display:flex;flex-direction:column;gap:5px;color:#5c7886}.lab-current b{font-size:28px;color:#163d50;font-variant-numeric:tabular-nums}
+.lab-live-eq{font-size:clamp(18px,2vw,28px);font-weight:700;letter-spacing:-.3px;border-block:1px solid #d4e1e8;padding:18px 0;color:#184d69;font-variant-numeric:tabular-nums}
+.lab-run{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 19px;background:#165f82;border:1px solid #165f82;color:#fff;font-size:19px;border-radius:10px;font-weight:700;margin:20px 0 15px}
+.lab-run span{font-size:25px}.lab-feedback{min-height:95px;padding:17px 18px;background:#f5f8fa;border-radius:9px;border:1px solid #d0dfe7;font-size:16px}
+.lab-feedback b{font-size:19px}.lab-feedback p{margin:7px 0 0;font-size:15px;color:inherit}
+.lab-feedback[data-result="ok"]{background:#eef8f4;border-color:#9ccbbb;color:#19594a}.lab-feedback[data-result="tip"]{background:#fff4e8;border-color:#d9b382;color:#7d4b19}
+.lab-real{margin-top:18px;border-top:1px solid #d5e1e8;padding-top:18px;color:#31536a}.lab-real b{font-size:16px}
+@media(max-width:1200px){.workspace{grid-template-columns:238px minmax(0,1fr)}.drafting-layout{grid-template-columns:minmax(0,1fr) minmax(225px,.78fr)}.lab-main{grid-template-columns:1fr}.lab-notes{border-left:0;border-top:1px solid #c6d9e3}.lab-workbench{grid-template-columns:minmax(240px,.7fr) minmax(0,1fr)}}
+@media(max-width:900px){.workspace{display:block}.workspace .controls{position:static;max-height:none;margin-bottom:16px}.workspace .controls .fieldgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.drafting-layout{grid-template-columns:minmax(0,1fr) minmax(210px,.7fr)}}
+@media(max-width:690px){.drafting-layout{grid-template-columns:1fr}.lab-masses{grid-template-columns:1fr;gap:12px}.lab-mass-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.lab-mass-options button{padding:8px;min-width:0;min-height:82px;display:flex;flex-direction:column;gap:5px}.lab-workbench{grid-template-columns:1fr}.dial-column{border-right:0;border-bottom:1px solid #c6d9e3}.lab-notes,.lab-test-column,.dial-column{padding:18px}.content{padding:13px}.motion-actions{align-items:flex-start}}
+@media(max-width:500px){.workspace .controls .fieldgrid{grid-template-columns:1fr 1fr}.lab-mass-options button small{display:none}.lab-masses-title b{font-size:16px}.lab-diagram{padding:12px}.lab-crane{min-height:230px}.lab-notes h3{font-size:21px}}
+@media print{.workspace{display:block!important}.workspace .controls{display:none!important}.drafting-layout{grid-template-columns:1.7fr .85fr}.lab-main{grid-template-columns:1.5fr .8fr}.lab-workbench{grid-template-columns:1fr 1fr}.lab-run,.motion-actions,.lab-masses button,.answer-reveal{display:none!important}}
+
+
+/* V12: real calculations and a visible assembled top projection */
+.drafting-stack{gap:20px}.drafting-stack>.drawingbox{width:100%}
+.trial-v12 .lab-heading{margin:0 0 16px}
+.test-workspace{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(350px,.8fr);gap:16px;align-items:start}
+.test-scene,.test-sheet{border:1px solid #c8d8e1;border-radius:10px;background:#fff;min-width:0}
+.test-scene{padding:16px;background:#f9fcfe;position:sticky;top:12px}
+.test-scene-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#214b61;margin-bottom:8px}.test-scene-top strong{font-size:19px}.test-scene-top span{font-size:14px;color:#57798a}
+.test-crane svg{display:block;width:100%;height:auto;max-height:570px}
+.test-scene-note,.test-safety{font-size:14px;line-height:1.55;color:#456477;margin-top:8px}
+.test-safety{background:#fff8ed;border-left:3px solid #b58b43;padding:12px 15px;margin-top:16px}
+.test-sheet{padding:19px 20px;display:flex;flex-direction:column;gap:10px}
+.lab-step-title{display:flex;align-items:center;gap:10px;font-size:18px;color:#16475e;margin-top:6px}
+.lab-step-title > span:first-child{width:28px;height:28px;border-radius:50%;background:#205e7f;color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;flex:0 0 28px}.lab-step-title > strong{display:block;min-width:0;line-height:1.25}
+.payload-set{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:6px 0 8px}
+.payload-set button{padding:12px 7px;background:#fff;border:1px solid #b5cad7;color:#265970;border-radius:8px;font-weight:700;font-size:20px}
+.payload-set button[aria-pressed="true"]{background:#e4f2f9;border:2px solid #166184}
+.formula-intro{font-size:14px;line-height:1.5;color:#45677b;background:#f2f7fa;border-radius:8px;padding:11px 12px}
+.lab-givens{padding:7px 0;font-size:15px;font-weight:700;color:#1e4f68;font-variant-numeric:tabular-nums}
+.calc-worksheet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.calc-worksheet label{display:flex;flex-direction:column;gap:8px;border:1px solid #dae5eb;background:#fbfdfe;border-radius:8px;padding:11px;min-width:0;font-size:14px}
+.calc-worksheet label>span{font-weight:700;color:#305771}
+.calc-inline{font-size:16px;color:#245b76;font-weight:700;line-height:1.35}
+.calc-worksheet input,.mass-entry input{background:white;border:1px solid #acc5d3;border-radius:7px;min-height:45px;width:100%;padding:7px 10px;font-size:19px;color:#193d50;min-width:0}
+.math-feedback{font-size:14px;line-height:1.5;color:#4e6e81;min-height:42px}.math-feedback.ok{color:#166444;font-weight:700}.math-feedback.err{color:#a64d29}
+.mass-entry{display:flex;flex-direction:column;gap:8px;margin-top:4px}.mass-entry>label{font-size:14px;font-weight:700}
+.mass-entry-row{display:flex;align-items:center;gap:14px}.mass-entry-row input{max-width:145px;font-size:24px;font-weight:700}.mass-entry-row span{font-size:14px;color:#607e8c}
+.test-button{min-height:48px;font-size:18px;margin-top:4px}.test-button:disabled{background:#d7e3e9;color:#698294;border-color:#d7e3e9}
+.test-sheet .lab-feedback{min-height:88px;padding:13px 14px}.test-sheet .lab-feedback b{font-size:16px}.test-sheet .lab-feedback p{margin:5px 0 0;font-size:14px}
+@media(max-width:1150px){.test-workspace{grid-template-columns:1fr}.test-scene{position:static}}
+@media(max-width:650px){.calc-worksheet{grid-template-columns:1fr}.test-sheet{padding:14px}.test-scene{padding:10px}.lab-step-title{align-items:flex-start}.lab-step-title > span:first-child{margin-top:1px}.lab-step-title > strong{flex:1}}
+@media print{.test-workspace{grid-template-columns:1fr 1fr}.test-scene{position:static}}
+
+/* V14: unified base+stand drafting and strict combined-mass budget */
+.drafting-stack>.drawingbox:nth-child(3) .paper svg{width:100%;max-height:none}
+.load-budget-note{padding:10px 12px;border-left:3px solid #285f80;background:#f2f7fa;font-size:14px;line-height:1.5;color:#31566b;margin:0 0 8px}
+.payload-set button:disabled{opacity:.34;background:#e9eff2;color:#617985;border-color:#cad7de;cursor:not-allowed;filter:none}
+.payload-set button:disabled::after{content:'недоступно';font-size:10px;display:block}
+.test-scene{overflow:hidden}
+.test-sheet .calc-inline{overflow-wrap:anywhere}
+@media(max-width:650px){.payload-set{grid-template-columns:repeat(3,minmax(0,1fr))}.load-budget-note{font-size:13px}}
+
+/* PROG: редактор текста интерфейса; SVG-чертежи остаются неизменными */
+.prog-access{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:6px 8px;border:1px solid #d5e2e9;border-radius:9px;background:#f6fafc}
+.prog-access input{width:82px;min-width:70px;padding:8px 9px;border:1px solid #bfd2df;border-radius:7px;background:#fff;color:#183747;font-size:13px}
+.prog-access .btn{padding:8px 10px;font-size:12px;white-space:nowrap}
+.prog-status{font-size:11px;color:#587485;max-width:150px;line-height:1.25}
+#progSaveHtml[hidden]{display:none!important}
+body.prog-edit-mode [data-prog-key][contenteditable="plaintext-only"]{cursor:text;text-decoration:underline dotted rgba(21,94,129,.55);text-decoration-thickness:1px;text-underline-offset:3px;border-radius:2px}
+body.prog-edit-mode [data-prog-key][contenteditable="plaintext-only"]:hover{background:#fff5d9;outline:1px dashed #c69b45}
+body.prog-edit-mode [data-prog-key][contenteditable="plaintext-only"]:focus{background:#fff;outline:2px solid #2b82ae;text-decoration:none}
+@media(max-width:730px){.bar{flex-wrap:wrap}.actions{flex-wrap:wrap}.prog-access{width:100%}.prog-status{flex-basis:100%;max-width:none}}
+
+</style>
+</head>
+<body>
+<header><div class="bar"><div><h1>Кран из картона</h1><div class="subline">Три проекции · рабочие чертежи деталей · расчёт и испытание противовеса</div></div><div class="actions">
+<button class="btn secondary" id="export">Сохранить чертёж SVG</button>
+<button class="btn" id="print">Печать текущего раздела</button>
+<div class="prog-access" id="progAccess" aria-label="Редактирование текста">
+<input id="progKey" type="password" autocomplete="off" placeholder="Ключ" aria-label="Ключ редактора">
+<button class="btn secondary" id="progToggle" type="button">Открыть редактуру</button>
+<button class="btn ghost" id="progSaveHtml" type="button" hidden>Скачать HTML с правками</button>
+<span class="prog-status" id="progStatus" role="status">Для редактирования введите ключ</span>
+</div>
+</div></div></header>
+<main class="page"><div class="workspace show-geometry" id="workspace"><aside class="panel controls" aria-label="Параметры крана"><div class="headingrow"><h2>Размеры крана</h2><span class="micro">Изменяйте параметры и сразу смотрите на чертёж справа.</span></div><div class="fieldgrid" id="fields"></div><div class="topmeta"><span class="pill">Высота 10–20 см</span><span class="pill">Перед стойкой 20 мм</span><span class="pill">Между боковинами 40 мм</span><span class="pill">Размеры переносите самостоятельно</span></div></aside><div class="workarea">
+<nav class="tabs" aria-label="Разделы проекта"><button class="tab active" data-view="overview">1 · Чертежи и размеры</button><button class="tab" data-view="winch">2 · Лебёдка</button><button class="tab" data-view="trial">3 · Противовес</button><button class="tab" data-view="assembly">4 · Изготовление</button></nav>
+<div class="panel content">
+<section id="overview" class="active">
+ <div class="page-hero"><div><h2>Проект крана</h2><p>Изменяйте размеры слева. На этой странице показаны три проекции каркаса и общий лист основания и опор лебёдки, без выкроек 1:1. Детали размечайте самостоятельно.</p></div><div class="motion-actions"><button class="btn" id="liftBtn" type="button">Показать подъём</button><span id="liftInfo" aria-live="polite">Анимация выключена. Чертёж без нити и груза.</span></div></div>
+ <div class="drafting-layout">
+  <div class="drafting-stack">
+   <article class="drawingbox"><div class="paperhead">01. Общий вид сбоку</div><div class="paper" id="viewSide"></div></article>
+   <article class="drawingbox"><div class="paperhead">02. Собранный кран, вид сверху</div><div class="paper" id="viewTop"></div></article>
+  </div>
+  <div class="drafting-info">
+   <article class="drawingbox frontbox"><div class="paperhead">04. Вид спереди</div><div class="paper" id="viewFront"></div></article>
+   <article class="holepanel"><div class="paperhead">Отверстия обеих боковин</div><p class="micro">Начало координат: задний край основания, верхняя поверхность основания. Все значения в миллиметрах.</p><div class="tablewrap"><table class="data"><thead><tr><th>№</th><th>X</th><th>Y</th><th>Для чего</th></tr></thead><tbody id="holesTable"></tbody></table></div><details><summary>Координаты контура боковины</summary><table class="data"><thead><tr><th>Точка</th><th>X</th><th>Y</th><th></th></tr></thead><tbody id="cornersTable"></tbody></table></details></article>
+  </div>
+  <article class="drawingbox overview-wide"><div class="paperhead">03. Основание и две опоры лебёдки · общая миллиметровка</div><div class="paper" id="basePart"></div><div class="draw-foot" id="slotSpecs"></div></article>
+ </div>
+ <div class="boxnote">На основном чертеже показана стойка, стрела, каркас, лебёдка и плоское основание. На первой странице есть вид сверху собранного крана, а на общей расширенной миллиметровке показаны основание и обе одинаковые опоры лебёдки. Нить и груз видны только при запуске анимации, в распечатку они не включаются.</div>
+</section>
+<section id="winch"><h2>Лебёдка позади стойки, на основании</h2>
+<p class="lead">Лебёдка установлена на <strong>двух собственных картонных опорах</strong> позади стойки, как на предложенном рисунке. Ось P05 свободно вращается в отверстиях опор, а бумажный барабан закреплён на ней. Поперечина P12 соединяет опоры снизу и не вращается. В боковинах самого крана отверстий P05 нет.</p>
+<div class="winchgrid">
+ <article class="mechanic-card"><h3>1. Барабан и ручка</h3><div class="paper" id="winchPart"></div><div class="mechanic-text"><b>Материалы:</b> гладкая деревянная шпажка длиной 80 мм, бумажный малярный скотч шириной 40 мм для намотки, два квадрата 14 × 14 мм, двухслойная ручка 30 × 9 мм. Ручка крепится к концу оси снаружи отдельной опоры, а не к стойке крана.</div></article>
+ <article class="mechanic-card"><h3>2. Пять направляющих</h3><div class="paper" id="guidesPart"></div><div class="mechanic-text"><b>Материалы:</b> пять зубочисток P06, P07, P08, P10 и P11 длиной 65 мм и десять квадратов 14 × 14 мм. Центры квадратов находятся на 2,5 мм по обе стороны от оси нити, поэтому проход для нити равен 5 мм. P09 остаётся простой поперечиной. Нить идёт от лебёдки через P06, P07 и P08, проходит над простой поперечиной P09, затем через P10 и P11.</div></article>
+
+ </div>
+<div class="build-order"><h3>Как собрать рабочую лебёдку</h3><ol>
+<li>Вырежьте две картонные опоры высотой 64 мм с основанием шириной 30 мм. На каждой отметьте отверстия P05 (52 мм от основания) и P12 (18 мм). Не сверлите ось лебёдки в стойке крана.</li>
+<li>Вставьте опоры в две задние прорези основания: они должны стоять параллельно боковинам крана на расстоянии 50 мм друг от друга. Проклейте соединение с основанием. Соедините опоры неподвижной зубочисткой P12.</li>
+<li>Намотайте на середину гладкой деревянной шпажки 80 мм барабан из бумажного скотча шириной 40 мм. Проклейте его и добавьте две квадратные щёчки. Барабан должен вращаться вместе с осью.</li>
+<li>Пропустите ось P05 через отверстия в опорах. На наружном конце закрепите простую картонную ручку с пальцем из обрезка зубочистки. Проверьте свободное вращение, чтобы барабан не задевал опоры.</li>
+<li>Закрепите нить на барабане. Поднимите её от лебёдки к поперечине P06, затем проведите между щёчками направляющих P06, P07, P08, P10 и P11. Нить не должна цепляться за стойку и должна свободно идти к грузу.</li>
+<li>Поднимите небольшой груз на несколько сантиметров. Перед испытанием остойчивости закрепите ручку малярной лентой к опоре лебёдки и полностью отпустите кран.</li></ol></div>
+<div class="boxwarning"><b>Важно для работы механизма:</b> отверстия P05 немного больше диаметра шпажки; не наносите клей на места её контакта с опорами лебёдки. Ручка и барабан, наоборот, жёстко соединены с осью. Стопора нет: при отпускании ручки груз может опуститься. Для проверки самого подъёма удерживайте ручку. Для проверки устойчивости временно зафиксируйте её отдельным кусочком бумажной малярной ленты к опоре лебёдки, затем уберите руки и только после этого осторожно проверьте равновесие над столом.</div>
+</section>
+<section id="trial" class="field-study trial-v12">
+ <div class="lab-heading"><div class="lab-kicker">ИНЖЕНЕРНОЕ ИСПЫТАНИЕ</div><h2>Рассчитайте противовес. Проверьте результат.</h2><p>Сначала выполните два вычисления самостоятельно. Затем установите рассчитанный противовес и запустите модель. Масса груза не более 60 г, а сумма груза и противовеса не более 70 г. Груз блокируется, если минимальный противовес, дающий момент строго больше момента груза (шаг 1 г), вместе с грузом превышает 70 г.</p></div>
+ <div class="test-workspace">
+   <div class="test-scene"><div class="test-scene-top"><strong>Кран при испытании</strong><span id="labStageLabel">Без нагрузки на модель</span></div><div id="labCrane" class="test-crane" aria-label="Модель картонного крана"></div><p class="test-scene-note">Наклон показывает только условие равновесия моментов. Сам картонный кран может вести себя иначе из-за собственной массы, прочности и трения.</p></div>
+   <div class="test-sheet">
+    <div class="lab-step-title"><span>1</span><strong>Выберите поднимаемый груз</strong></div>
+    <div class="payload-set" id="payloadChoices" role="group" aria-label="Выберите массу груза">
+      <button type="button" data-payload="5" aria-pressed="false">5 г</button>
+      <button type="button" data-payload="10" aria-pressed="false">10 г</button>
+      <button type="button" data-payload="20" aria-pressed="true">20 г</button>
+      <button type="button" data-payload="30" aria-pressed="false">30 г</button>
+      <button type="button" data-payload="40" aria-pressed="false">40 г</button>
+      <button type="button" data-payload="50" aria-pressed="false">50 г</button>
+      <button type="button" data-payload="60" aria-pressed="false">60 г</button>
+    </div>
+    <p class="load-budget-note" id="loadBudgetNote" aria-live="polite"></p>
+    <div class="lab-step-title"><span>2</span><strong>Вычислите по формулам</strong></div>
+    <div class="calc-worksheet">
+      <label for="userMoment"><span>Момент груза, г·см</span><div class="calc-inline" id="userMomentExpression">М<sub>г</sub> = m<sub>г</sub> × a</div><input id="userMoment" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Введите ответ"></label>
+      <label for="userCounter"><span>Масса противовеса, г</span><div class="calc-inline" id="userCounterExpression">m<sub>пр</sub> = М<sub>г</sub> ÷ b</div><input id="userCounter" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Введите ответ"></label>
+    </div>
+    <button type="button" class="btn" id="verifyMath">Проверить расчёт</button><div id="mathFeedback" class="math-feedback" aria-live="polite">Рассчитайте оба значения. Проверка не подставляет ответы автоматически.</div>
+    <div class="lab-step-title"><span>3</span><strong>Установите противовес и испытайте</strong></div>
+    <div class="mass-entry"><label for="selectedCounter">Масса противовеса, г</label><div class="mass-entry-row"><input id="selectedCounter" type="number" min="0" max="50" step="1" value="0" inputmode="numeric"><span id="counterBudget">Суммарная масса не более 70 г.</span></div></div>
+    <button class="btn test-button" id="runLab" type="button" disabled>Испытать кран</button>
+    <div id="labFeedback" class="lab-feedback" role="status" aria-live="polite"><b>До испытания осталось два действия</b><p>Вычислите момент груза и массу противовеса, затем проверьте решения.</p></div>
+   </div>
+ </div>
+ <p class="test-safety"><b>Проверка в реальности:</b> начинайте с 10 г. Поднимайте груз на 2–3 см над столом и фиксируйте ручку лебёдки. Поднимаемый груз не более 60 г, а сумма масс груза и противовеса не более 70 г. Если расчёт требует тяжёлого противовеса, уменьшите вылет стрелы или груз; без проверки прочности не перегружайте картон. При деформации немедленно прекратите испытание.</p>
+</section>
+<section id="assembly"><h2>Изготовление и проверка</h2><p class="lead">Порядок сборки рассчитан на короткий этап проектирования и основную работу руками. Отмечайте готовые операции.</p><div class="steps" id="steps"></div><div class="boxwarning">Работайте с небольшой массой груза, испытание проводите над свободной поверхностью и не держите пальцы под подвесом. Модель предназначена для учебных опытов, не для подъёма тяжёлых предметов.</div></section>
+</div></div></div>
+</main>
+<footer>Все чертежи строятся из одной геометрической модели. Экранные изображения не в масштабе 1:1. Физическую работоспособность необходимо проверить на макете.</footer>
+<script>
+'use strict';
+const vars={H:160,L:140,W:100,E:90,mass:40};
+const defs={H:{name:'Высота крана',min:10,max:20,initial:16},L:{name:'Длина основания',min:10,max:18,initial:14},W:{name:'Ширина основания',min:8,max:12,initial:10},E:{name:'Вылет крюка',min:6,max:14,initial:9}};
+const $=id=>document.getElementById(id),clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+const round=n=>Math.round(n*10)/10,fmt=n=>Number.isInteger(n)?String(n):n.toFixed(1).replace(/\.0$/,'');
+const htmlEscape=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const SVG_STYLES=`.cut{stroke:#175e82;stroke-width:1.15;fill:#eaf4f9;stroke-linejoin:round}.cutPlain{stroke:#175e82;stroke-width:1.1;fill:#edf5fa}.hole{fill:#fff;stroke:#b96740;stroke-width:.8}.axle{stroke:#ae7636;stroke-width:1.75;fill:none}.flange{fill:#eed9b5;stroke:#a77535;stroke-width:.8}.accent{stroke:#216b8b;fill:none;stroke-width:1}.dim{stroke:#517487;stroke-width:.5;fill:none}.guide{stroke:#7da0b1;stroke-width:.45;stroke-dasharray:2.5 2.2;fill:none}.title{fill:#163f57;font:bold 9px Arial,sans-serif}.txt{fill:#31556b;font:7.4px Arial,sans-serif}.small{fill:#47697b;font:6.5px Arial,sans-serif}.label{fill:#2d5368;font:7px Arial,sans-serif;text-anchor:middle}.number{fill:#2f6079;font:6px Arial,sans-serif}.callout{fill:#fff;fill-opacity:.93;stroke:#bfd3dc;stroke-width:.45}.critical{fill:#ad6532;font:7px Arial,sans-serif}.plan-sheet .title{font:bold 20px Arial,sans-serif}.plan-sheet .txt{font:18px Arial,sans-serif}.plan-sheet .small{font:16px Arial,sans-serif}.plan-sheet .label{font:16px Arial,sans-serif;text-anchor:middle}.plan-sheet .number{font:15px Arial,sans-serif}.plan-sheet .dim{stroke-width:1}.plan-sheet .cutPlain{stroke-width:1.7}.plan-sheet .hole{stroke-width:1.25}`;
+let serial=0;
+function model(){
+ let {H,L,W,E}=vars;
+ let t=6,mastFront=L-20,mastBack=mastFront-26,mastCenter=mastBack+13,
+ rear=mastBack-35,tip=L+E+7,beamY=H-12,baseY=H-24;
+ const corners=[[rear,baseY],[rear,H-12],[rear+12,H],[tip,H],[tip,baseY],[mastFront,baseY],[mastFront,0],[mastBack,0],[mastBack,baseY]];
+ const bars=[];const add=(id,x,y,kind)=>bars.push({id,x:round(x),y:round(y),kind});
+ const ys=Array.from({length:4},(_,i)=>18+i*(H-58)/4);
+ ys.forEach((y,i)=>add('P'+String(i+1).padStart(2,'0'),mastCenter,y,'Связь стойки'));
+ add('P06',rear+9,beamY,'Первая задняя направляющая');add('P07',rear+26,beamY,'Вторая задняя направляющая');
+ add('P08',mastFront+9,beamY,'Гантель 1');add('P09',mastFront+25,beamY,'Связь стрелы');
+ add('P10',tip-29,beamY,'Гантель 2');add('P11',tip-7,beamY,'Передняя направляющая с щёчками');
+ const slots=[W/2-20,W/2+20]; // боковины: 40 мм между осями
+ const winchSlots=[W/2-25,W/2+25]; // опоры лебёдки: 50 мм между осями, чтобы барабан 40 мм и щёчки свободно помещались
+ const winch={x:25,height:64,axleZ:52,braceZ:18,bottomHalf:15,topHalf:9,axisLength:80,standWidth:30,drumWidth:40,supportSpacing:50};
+ return {H,L,W,E,t,mastBack,mastFront,mastCenter,rear,tip,beamY,baseY,corners,bars,slots,winchSlots,
+ slitWidth:2.4,gap:40,counterX:rear+9,counterArm:round(L-(rear+9)),winch};
+}
+function gridPattern(id){return `<defs><pattern id="minor${id}" width="1" height="1" patternUnits="userSpaceOnUse"><path d="M1 0H0V1" fill="none" stroke="#bfd2dd" stroke-width=".13"/></pattern><pattern id="major${id}" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="url(#minor${id})"/><path d="M10 0H0V10 M5 0V10 M0 5H10" fill="none" stroke="#92b1c0" stroke-width=".22"/></pattern><marker id="arrow${id}" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7" fill="#537689"/></marker></defs>`}
+function svg(width,height,draw,caption){
+ let id=++serial,content=draw.replaceAll('url(#ARROW)','url(#arrow'+id+')');
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${htmlEscape(caption)}"><style>${SVG_STYLES}
+/* V12: real calculations and a visible assembled top projection */
+.drafting-stack{gap:20px}.drafting-stack>.drawingbox{width:100%}
+.trial-v12 .lab-heading{margin:0 0 16px}
+.test-workspace{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(350px,.8fr);gap:16px;align-items:start}
+.test-scene,.test-sheet{border:1px solid #c8d8e1;border-radius:10px;background:#fff;min-width:0}
+.test-scene{padding:16px;background:#f9fcfe;position:sticky;top:12px}
+.test-scene-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#214b61;margin-bottom:8px}.test-scene-top strong{font-size:19px}.test-scene-top span{font-size:14px;color:#57798a}
+.test-crane svg{display:block;width:100%;height:auto;max-height:570px}
+.test-scene-note,.test-safety{font-size:14px;line-height:1.55;color:#456477;margin-top:8px}
+.test-safety{background:#fff8ed;border-left:3px solid #b58b43;padding:12px 15px;margin-top:16px}
+.test-sheet{padding:19px 20px;display:flex;flex-direction:column;gap:10px}
+.lab-step-title{display:flex;align-items:center;gap:10px;font-size:18px;color:#16475e;margin-top:6px}
+.lab-step-title > span:first-child{width:28px;height:28px;border-radius:50%;background:#205e7f;color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;flex:0 0 28px}.lab-step-title > strong{display:block;min-width:0;line-height:1.25}
+.payload-set{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:6px 0 8px}
+.payload-set button{padding:12px 7px;background:#fff;border:1px solid #b5cad7;color:#265970;border-radius:8px;font-weight:700;font-size:20px}
+.payload-set button[aria-pressed="true"]{background:#e4f2f9;border:2px solid #166184}
+.formula-intro{font-size:14px;line-height:1.5;color:#45677b;background:#f2f7fa;border-radius:8px;padding:11px 12px}
+.lab-givens{padding:7px 0;font-size:15px;font-weight:700;color:#1e4f68;font-variant-numeric:tabular-nums}
+.calc-worksheet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.calc-worksheet label{display:flex;flex-direction:column;gap:8px;border:1px solid #dae5eb;background:#fbfdfe;border-radius:8px;padding:11px;min-width:0;font-size:14px}
+.calc-worksheet label>span{font-weight:700;color:#305771}
+.calc-inline{font-size:16px;color:#245b76;font-weight:700;line-height:1.35}
+.calc-worksheet input,.mass-entry input{background:white;border:1px solid #acc5d3;border-radius:7px;min-height:45px;width:100%;padding:7px 10px;font-size:19px;color:#193d50;min-width:0}
+.math-feedback{font-size:14px;line-height:1.5;color:#4e6e81;min-height:42px}.math-feedback.ok{color:#166444;font-weight:700}.math-feedback.err{color:#a64d29}
+.mass-entry{display:flex;flex-direction:column;gap:8px;margin-top:4px}.mass-entry>label{font-size:14px;font-weight:700}
+.mass-entry-row{display:flex;align-items:center;gap:14px}.mass-entry-row input{max-width:145px;font-size:24px;font-weight:700}.mass-entry-row span{font-size:14px;color:#607e8c}
+.test-button{min-height:48px;font-size:18px;margin-top:4px}.test-button:disabled{background:#d7e3e9;color:#698294;border-color:#d7e3e9}
+.test-sheet .lab-feedback{min-height:88px;padding:13px 14px}.test-sheet .lab-feedback b{font-size:16px}.test-sheet .lab-feedback p{margin:5px 0 0;font-size:14px}
+@media(max-width:1150px){.test-workspace{grid-template-columns:1fr}.test-scene{position:static}}
+@media(max-width:650px){.calc-worksheet{grid-template-columns:1fr}.test-sheet{padding:14px}.test-scene{padding:10px}}
+@media print{.test-workspace{grid-template-columns:1fr 1fr}.test-scene{position:static}}
+</style>${gridPattern(id)}<rect width="${width}" height="${height}" fill="#fff"/><rect width="${width}" height="${height}" fill="url(#major${id})"/>${content}</svg>`;
+}
+function text(x,y,t,cls='txt',anchor='start',extra=''){return `<text x="${round(x)}" y="${round(y)}" text-anchor="${anchor}" class="${cls}" ${extra}>${htmlEscape(t)}</text>`}
+function line(x1,y1,x2,y2,cls='dim',extra=''){return `<line x1="${round(x1)}" y1="${round(y1)}" x2="${round(x2)}" y2="${round(y2)}" class="${cls}" ${extra}/>`}
+function Hdim(a,b,y,ya,yb,s){if(Math.abs(b-a)<.1)return '';return line(a,ya,a,y+4)+line(b,yb,b,y+4)+`<line x1="${a}" y1="${y}" x2="${b}" y2="${y}" class="dim" marker-start="url(#ARROW)" marker-end="url(#ARROW)"/>`+text((a+b)/2,y-3,s,'label')}
+function Vdim(x,a,b,xa,xb,s){if(Math.abs(b-a)<.1)return '';return line(xa,a,x-4,a)+line(xb,b,x-4,b)+`<line x1="${x}" y1="${a}" x2="${x}" y2="${b}" class="dim" marker-start="url(#ARROW)" marker-end="url(#ARROW)"/>`+text(x-5,(a+b)/2,s,'label','middle',`transform="rotate(-90 ${x-5} ${(a+b)/2})"`)}
+function path(points,xx,yy,css='cut'){return `<path d="${points.map(([x,y],i)=>(i?'L':'M')+round(xx(x))+' '+round(yy(y))).join(' ')} Z" class="${css}"/>`}
+function holes(g,xx,yy,withIds=false){return g.bars.map(q=>`<circle cx="${round(xx(q.x))}" cy="${round(yy(q.y))}" r="${q.id==='P05'?1.8:1.35}" class="hole" data-hole="${q.id}"/>`+(withIds?text(xx(q.x)+(q.id==='P01'||q.id==='P02'||q.id==='P03'||q.id==='P04'?5:0),yy(q.y)-3,q.id,'number',q.id==='P01'||q.id==='P02'||q.id==='P03'||q.id==='P04'?'start':'middle'):'')).join('')}
+function squareGuidesTop(g,x,y){let s='';for(let q of g.bars.filter(q=>['P06','P07','P08','P10','P11'].includes(q.id))){let upper=y-4.5,lower=y+2.5;for(let at of [upper,lower])s+=`<rect x="${x(q.x)-7}" y="${at}" width="14" height="2" class="flange" data-part="square"/>`;}return s}
+function sideView(g,full=false){
+ let ox=52,base=g.H+43,X=x=>ox+x,Y=y=>base-y,w=ox+g.tip+58+(full?176:0),h=Math.max(base+110,full?355:0),
+ s=text(17,13,full?'ДЕТАЛЬ: БОКОВИНА  ·  2 ШТ.':'ВИД СБОКУ','title');
+ s+=`<rect x="${ox}" y="${base}" width="${g.L}" height="${g.t}" class="cutPlain"/>`;
+ if(!full){
+  let k=g.winch;
+  let leg=[[k.x-k.bottomHalf,0],[k.x-k.topHalf,k.height],[k.x+k.topHalf,k.height],[k.x+k.bottomHalf,0]];
+  s+=path(leg,X,Y,'cut');
+  s+=`<circle cx="${X(k.x)}" cy="${Y(k.axleZ)}" r="2" class="hole" data-winch="P05"/>`;
+  s+=`<circle cx="${X(k.x)}" cy="${Y(k.braceZ)}" r="1.5" class="hole" data-winch="P12"/>`;
+  // The handle is fixed to the transverse axis outside the support.
+  s+=`<g id="rotatingHandle"><rect x="${round(X(k.x)-4.5)}" y="${round(Y(k.axleZ+6))}" width="9" height="30" fill="#e5d5ad" stroke="#9e793f" stroke-width=".8" data-handle="side"/><circle cx="${X(k.x)}" cy="${Y(k.axleZ)}" r="1.5" class="hole"/><circle cx="${X(k.x)}" cy="${Y(k.axleZ-18)}" r="1.5" fill="#8b643a" stroke="#523a1f" stroke-width=".7"/></g>`;
+  s+=`<circle cx="${X(k.x)}" cy="${Y(k.axleZ)}" r="4.5" fill="#e6bd88" stroke="#9e793f" stroke-width=".8" data-winch-drum="side"/><circle cx="${X(k.x)}" cy="${Y(k.axleZ)}" r="1.5" fill="#fff" stroke="#9e793f" stroke-width=".7"/>`;
+  s+=text(X(k.x)-22,Y(27),'Лебёдка','small','end');
+ }
+ s+=path(g.corners,X,Y)+holes(g,X,Y,false);
+ if(!full){
+  for(let q of g.bars){
+   if(q.y===g.beamY)s+=text(X(q.x),Y(g.H)-6,q.id,'number','middle');
+   else s+=text(X(q.x)+16,Y(q.y)+2,q.id,'number');
+  }
+ }
+ if(!full){
+  for(let q of g.bars.filter(q=>['P06','P07','P08','P10','P11'].includes(q.id)))
+    s+=`<rect x="${round(X(q.x)-7)}" y="${round(Y(q.y)-7)}" width="14" height="14" fill="none" stroke="#9c793f" stroke-dasharray="2 2" stroke-width=".55" data-hidden-square="${q.id}"/>`;
+  s+=line(X(g.tip-7),Y(g.beamY),X(g.tip-7),h-1,'guide');
+ }
+ s+=Hdim(X(0),X(g.L),base+26,base,base,`${g.L} мм`)+Hdim(X(g.L),X(g.tip-7),base+42,base,base+42,`E = ${g.E} мм`);
+ s+=Vdim(ox-23,Y(g.H),Y(0),X(g.rear),X(g.mastBack),`${g.H} мм`);
+ if(full){
+  s+=Hdim(X(g.mastBack),X(g.mastFront),base+12,Y(0),Y(0),'26 мм');
+  s+=Hdim(X(g.rear),X(g.mastBack),Y(g.H)-13,Y(g.H-24),Y(g.H-24),`${g.mastBack-g.rear} мм`);
+  s+=Vdim(X(g.tip)+18,Y(g.H),Y(g.H-24),X(g.tip),X(g.tip),'24 мм');
+  s+=Hdim(X(g.tip-7),X(g.tip),Y(g.H)-11,Y(g.H-12),Y(g.H),'7');
+  s+=text(X(g.mastFront)+5,Y(g.H-24)+12,'Стойка','small');
+  let tableX=ox+g.tip+39,tableY=28,tableW=131;
+  function drawTable(title,rows,atY){
+   let t=`<rect x="${tableX}" y="${atY}" width="${tableW}" height="${15+rows.length*8}" class="callout"/>`;
+   t+=`<rect x="${tableX}" y="${atY}" width="${tableW}" height="15" fill="#e6f0f5" stroke="#a8c0ce" stroke-width=".35"/>`;
+   t+=text(tableX+4,atY+6,title,'txt')+text(tableX+4,atY+12,'№','small')+text(tableX+29,atY+12,'X, мм','small')+text(tableX+70,atY+12,'Y, мм','small');
+   rows.forEach((r,i)=>{let yy=atY+15+(i+1)*8;if(i%2)t+=`<rect x="${tableX+.5}" y="${yy-8}" width="${tableW-1}" height="8" fill="#f4f8fa"/>`;t+=line(tableX,yy,tableX+tableW,yy,'dim')+text(tableX+4,yy-2,String(r[0]),'small')+text(tableX+29,yy-2,fmt(r[1]),'small')+text(tableX+70,yy-2,fmt(r[2]),'small')});return t;
+  }
+  s+=drawTable('ОТВЕРСТИЯ БОКОВИНЫ',g.bars.map(q=>[q.id,q.x,q.y]),tableY);
+  s+=drawTable('КОНТУР · СОЕДИНИТЬ ПО ПОРЯДКУ',g.corners.map((p,i)=>[i+1,p[0],p[1]]),tableY+15+g.bars.length*8+14);
+  s+=text(tableX,tableY+15+g.bars.length*8+14+15+g.corners.length*8+12,'Все отверстия Ø2,2–2,5 мм.','small');
+ }else{
+  
+  
+ }
+ return svg(w,h,s,'Вид сбоку крана, все размеры в миллиметрах');
+}
+function topView(g,full=false){
+ let ox=45,oy=44,X=x=>ox+x,Y=y=>oy+y,w=ox+(full?g.L:g.tip)+65,h=oy+g.W+49,
+ s=text(12,14,full?'ОСНОВАНИЕ  ·  1 ШТ.':'ВИД СВЕРХУ','title');
+ s+=`<rect x="${ox}" y="${oy}" width="${g.L}" height="${g.W}" class="cutPlain"/>`;
+ for(let loc of g.slots){
+  s+=`<rect x="${X(g.mastBack)}" y="${Y(loc-g.slitWidth/2)}" width="26" height="${g.slitWidth}" fill="${full?'#fff':'#b1d2e5'}" stroke="#a86d32" stroke-width=".55" data-slot="mast"/>`;
+ }
+ for(let loc of g.winchSlots){
+  s+=`<rect x="${X(g.winch.x-15)}" y="${Y(loc-g.slitWidth/2)}" width="30" height="${g.slitWidth}" fill="${full?'#fff':'#b1d2e5'}" stroke="#a86d32" stroke-width=".55" data-slot="winch"/>`;
+ }
+ if(!full){
+  for(let loc of g.slots)s+=`<rect x="${X(g.rear)}" y="${Y(loc-1)}" width="${g.tip-g.rear}" height="2" class="cutPlain"/>`;
+  for(let loc of g.winchSlots)s+=`<rect x="${X(g.winch.x-15)}" y="${Y(loc-1)}" width="30" height="2" class="cutPlain" data-support="winch"/>`;
+  for(let q of g.bars){
+   s+=`<line x1="${X(q.x)}" y1="${Y(g.W/2-32.5)}" x2="${X(q.x)}" y2="${Y(g.W/2+32.5)}" class="axle" stroke-width="1" data-rod="${q.id}"/>`;
+  }
+  s+=`<line x1="${X(g.winch.x)}" y1="${Y(g.W/2-40)}" x2="${X(g.winch.x)}" y2="${Y(g.W/2+40)}" class="axle" data-rod="P05"/>`;
+  // Paper spool on the winch shaft and its two cardboard flanges, shown in plan.
+  s+=`<rect x="${X(g.winch.x-4)}" y="${Y(g.W/2-20)}" width="8" height="40" fill="#e6bf91" stroke="#aa793e" stroke-width=".6" data-part="spool"/>`;
+  for(let yy of [g.W/2-21,g.W/2+21])s+=`<rect x="${X(g.winch.x-7)}" y="${Y(yy-1)}" width="14" height="2" class="flange" data-part="winch-flange"/>`;
+  s+=`<rect x="${X(g.winch.x-4.5)}" y="${Y(g.W/2+36)}" width="9" height="2" class="flange" data-handle="top"/>`;
+  s+=squareGuidesTop(g,X,Y(g.W/2));
+  s+=text(X(g.winch.x),Y(g.winchSlots[0]-8),'Лебёдка','small','middle');
+  s+=text(X(g.mastCenter)+7,Y(g.slots[0]-8),'Стойка','small');
+  s+=text(X(g.tip)-1,Y(g.slots[0]-8),'Стрела','small','end');
+ }else{
+  s+=text(12,31,'ЧЕТЫРЕ ПАЗА ПОД ДЕТАЛИ','small');
+  s+=text(X(g.winch.x-15),Y(g.winchSlots[0]+8),'Лебёдка','small');
+  s+=text(X(g.mastBack),Y(g.slots[1]+9),'Стойка','small');
+  s+=Hdim(X(g.mastBack),X(g.mastFront),Y(g.slots[0]-12),Y(g.slots[0]),Y(g.slots[0]),'26 мм');
+  s+=Hdim(X(g.winch.x-15),X(g.winch.x+15),Y(g.winchSlots[0]-22),Y(g.winchSlots[0]),Y(g.winchSlots[0]),'30 мм');
+ }
+ s+=Hdim(X(0),X(g.L),Y(g.W)+23,Y(g.W),Y(g.W),`L = ${g.L} мм`);
+ if(!full)s+=Hdim(X(g.L),X(g.tip-7),Y(g.W)+38,Y(g.W/2),Y(g.W/2),`E = ${g.E} мм`);
+ s+=Vdim(X(0)-20,Y(0),Y(g.W),X(0),X(0),`W = ${g.W} мм`);
+ s+=Vdim(X(g.L)+18,Y(g.slots[0]),Y(g.slots[1]),X(g.mastFront),X(g.mastFront),'40 мм');
+ s+=Vdim(X(g.L)+37,Y(g.winchSlots[0]),Y(g.winchSlots[1]),X(g.L),X(g.L),'50 мм');
+ if(full){
+  s+=Hdim(X(0),X(g.mastBack),oy-10,oy,oy,`${g.mastBack} мм`);
+  s+=text(X(g.winch.x),Y(g.W)+8,`X оси лебёдки = ${g.winch.x} мм`,'small','middle');
+ }
+ return svg(w,h,s,full?'Чертеж основания с четырьмя прорезями':'Вид сверху собранного каркаса');
+}
+function frontView(g){
+ let oy=32,ox=33,X=y=>ox+y,Y=z=>oy+g.H-z,w=ox+g.W+32,h=oy+g.H+62,s=text(12,18,'ВИД СПЕРЕДИ','title')+'<g data-front-drawing="yes">';
+ s+=`<rect x="${X(0)}" y="${Y(0)}" width="${g.W}" height="${g.t}" class="cutPlain"/>`;
+ for(let sl of g.slots)s+=`<rect x="${X(sl-1)}" y="${Y(g.H)}" width="2" height="${g.H}" class="cutPlain" data-part="mast"/>`;
+ for(let sl of g.winchSlots)s+=`<rect x="${X(sl-1)}" y="${Y(g.winch.height)}" width="2" height="${g.winch.height}" class="cutPlain" data-part="winch-support"/>`;
+ for(let q of g.bars)s+=`<line x1="${X(g.W/2-32.5)}" y1="${Y(q.y)}" x2="${X(g.W/2+32.5)}" y2="${Y(q.y)}" class="axle" data-rod="${q.id}"/>`;
+ for(let [id,z,span] of [['P05',g.winch.axleZ,40],['P12',g.winch.braceZ,32.5]])
+  s+=`<line x1="${X(g.W/2-span)}" y1="${Y(z)}" x2="${X(g.W/2+span)}" y2="${Y(z)}" class="axle" data-rod="${id}"/>`;
+ s+=`<rect x="${X(g.W/2-20)}" y="${Y(g.winch.axleZ+4)}" width="40" height="8" fill="#e6bf91" stroke="#aa793e" stroke-width=".5" data-part="spool"/>`;
+ for(let transverse of [-21,21])s+=`<rect x="${round(X(g.W/2+transverse-1))}" y="${round(Y(g.winch.axleZ+7))}" width="2" height="14" class="flange" data-flange="P05"/>`;
+ s+=`<rect x="${X(g.W/2+35)}" y="${Y(g.winch.axleZ+6)}" width="2" height="30" class="flange" data-handle="front"/>`;
+ for(let q of g.bars.filter(q=>['P06','P07','P08','P10','P11'].includes(q.id)))for(let transverse of [-4.5,2.5])
+  s+=`<rect x="${round(X(g.W/2+transverse))}" y="${round(Y(q.y+7))}" width="2" height="14" class="flange" data-flange="${q.id}"/>`;
+ s+=Vdim(X(0)-19,Y(g.H),Y(0),X(g.slots[0]),X(g.slots[0]),`${g.H} мм`);
+ s+=Hdim(X(g.slots[0]),X(g.slots[1]),Y(0)+22,Y(g.H*.5),Y(g.H*.5),'40 мм');
+ s+=Hdim(X(g.winchSlots[0]),X(g.winchSlots[1]),Y(0)+42,Y(0),Y(0),'50 мм');
+ return svg(w,h,s+'</g>','Вид спереди: стойка, нижняя лебёдка, поперечины');
+}
+function detailedWinch(g){
+ const w=620,h=248,S=3.65,x0=48,yy=115,X=n=>x0+n*S;
+ let s=text(20,20,'P05 · БАРАБАН ИЗ БУМАЖНОГО СКОТЧА','title');
+ // Ось 80 мм; опоры разнесены на 50 мм. Барабан шириной 40 мм помещается между щёчками с небольшим зазором.
+ s+=`<rect x="${X(0)}" y="${yy-2.4}" width="${80*S}" height="4.8" fill="#ba8e58" stroke="#8f6437" stroke-width=".7"/>`;
+ for(let v of [15,65])s+=`<rect x="${X(v-1)}" y="${yy-50}" width="${2*S}" height="100" fill="#d6e9f2" stroke="#1d668b" stroke-width="1"/>`;
+ s+=`<rect x="${X(20)}" y="${yy-11}" width="${40*S}" height="22" rx="3" fill="#e5b77f" stroke="#9f6325" stroke-width="1.5"/>`;
+ for(let v of [19,59])s+=`<rect x="${X(v)}" y="${yy-25.5}" width="${2*S}" height="51" class="flange"/>`;
+ s+=Hdim(X(0),X(80),yy+79,yy,yy,'80 мм');
+ s+=Hdim(X(20),X(60),yy+56,yy+13,yy+13,'40 мм');
+ s+=Hdim(X(15),X(65),yy-69,yy-50,yy-50,'50 мм');
+ s+=text(X(40),yy-35,'скотч 8–10 мм Ø','small','middle');
+ s+=text(20,228,'P05: отверстия только в опорах, Ø3,2 мм. Ось Ø2,5–3 мм.','small');
+ // Handle schematic, away from spool. 30x9mm double cardboard with two holes.
+ const ax=435,ay=71,sx=3.0;
+ s+=text(420,35,'РУЧКА ИЗ ДВУХ СЛОЁВ','txt');
+ s+=`<rect x="${ax}" y="${ay}" width="${9*sx}" height="${30*sx}" fill="#e6f0f5" stroke="#215a7c" stroke-width="1.2"/>`;
+ for(let cy of [ay+6*sx,ay+24*sx])s+=`<circle cx="${ax+4.5*sx}" cy="${cy}" r="4" class="hole"/>`;
+ s+=Vdim(ax-20,ay,ay+30*sx,ax,ax,'30');
+ s+=Vdim(ax+47,ay+6*sx,ay+24*sx,ax+9*sx,ax+9*sx,'18');
+ s+=Hdim(ax,ax+9*sx,ay+30*sx+23,ay+30*sx,ay+30*sx,'9');
+ s+=text(480,105,'Ось','txt');s+=text(480,160,'Палец ручки','txt');
+ return svg(w,h,s,'Вращающийся барабан на шпажке и картонная рукоятка: размеры указаны в мм');
+}
+function detailedSupports(g){
+ const w=670,h=347,X=x=>100+x*3.0,Y=y=>250-y*3.0,k=g.winch;
+ let s=text(21,20,'ОПОРЫ ЛЕБЁДКИ  ·  2 ОДИНАКОВЫЕ ДЕТАЛИ','title');
+ let contour=[[-15,-g.t],[15,-g.t],[15,0],[9,k.height],[-9,k.height],[-15,0]];
+ s+=path(contour,X,Y,'cut');
+ for(let [id,z] of [['P05',k.axleZ],['P12',k.braceZ]]){
+  s+=`<circle cx="${X(0)}" cy="${Y(z)}" r="3.5" class="hole"/>`;
+  s+=text(X(15)+13,Y(z)+2,`${id}  ·  ${z} мм`,'txt');
+ }
+ s+=Vdim(X(-15)-26,Y(k.height),Y(0),X(-9),X(-15),`${k.height} мм`);
+ s+=Vdim(X(-15)-11,Y(0),Y(-g.t),X(-15),X(-15),`${g.t} мм`);
+ s+=Hdim(X(-15),X(15),Y(-g.t)+28,Y(-g.t),Y(-g.t),'30 мм');
+ s+=Hdim(X(-9),X(9),Y(k.height)-13,Y(k.height),Y(k.height),'18 мм');
+ s+=text(20,327,'Низ вставляется на 6 мм; P05 Ø3,2 мм; P12 Ø2,5 мм.','small');
+ s+=text(20,308,'Два одинаковых элемента; пазы основания показаны на странице 1.','small');
+ return svg(w,h,s,'Две одинаковые опоры лебёдки с размерами отверстий');
+}
+function detailedGuides(g){
+ const w=620,h=248,S=3.6,x0=50,yy=118,X=n=>x0+n*S;
+ let s=text(20,20,'P06, P07, P08, P10, P11 · НАПРАВЛЯЮЩИЕ','title');
+ s+=`<rect x="${X(0)}" y="${yy-2.1}" width="${65*S}" height="4.2" fill="#ba8e58" stroke="#8f6437" stroke-width=".7"/>`;
+ for(let v of [28,35])s+=`<rect x="${X(v)}" y="${yy-25.2}" width="${2*S}" height="50.4" class="flange"/>`;
+ s+=Hdim(X(0),X(65),yy+78,yy,yy,'65 мм');
+ s+=Hdim(X(30),X(35),yy-48,yy-25,yy-25,'5 мм');
+ s+=text(40,218,'Проход для нити 5 мм.','small');
+ s+=text(383,42,'ЩЁЧКА · 10 ШТ.','txt');
+ let xx=434,sy=91,ss=4.0;
+ s+=`<rect x="${xx}" y="${sy}" width="${14*ss}" height="${14*ss}" class="flange"/><circle cx="${xx+7*ss}" cy="${sy+7*ss}" r="3.5" class="hole"/>`;
+ s+=Hdim(xx,xx+14*ss,sy+14*ss+24,sy+14*ss,sy+14*ss,'14 мм');
+ s+=Vdim(xx-18,sy,sy+14*ss,xx,xx,'14 мм');
+ s+=text(378,220,'Отверстие по центру.','small');
+ return svg(w,h,s,'Пять направляющих с квадратными щёчками 14 × 14 мм');
+}
+function getPred(){return document.querySelector('input[name=guess]:checked')?.value||''}
+const trial={tokens:[],checked:false,history:[],records:[]};
+function tokenSum(){return trial.tokens.reduce((a,b)=>a+b,0)}
+function theory(g){const front=vars.mass*g.E,back=tokenSum()*g.counterArm;return {front,back,threshold:front/g.counterArm,holds:back>front,limit:Math.abs(back-front)<1e-6}}
+function balanceSVG(g){
+ const t=theory(g),p=tokenSum(),w=900,h=265;
+ const c=455,y=118,scale=2.55;
+ const a=g.E/10,b=g.counterArm/10;
+ const left=c-b*scale*10,right=c+a*scale*10;
+ let s=text(24,26,'РАВНОВЕСИЕ МОМЕНТОВ','title');
+ s+=`<line x1="${left}" y1="${y}" x2="${right}" y2="${y}" stroke="#376b83" stroke-width="5" stroke-linecap="round"/>`;
+ s+=`<path d="M${c-17} ${y+48} L${c} ${y+8} L${c+17} ${y+48}Z" fill="#c8d9e2" stroke="#5d8395" stroke-width="1.4"/>`;
+ s+=`<circle cx="${left}" cy="${y}" r="13" fill="#d8a567" stroke="#9e6e39" stroke-width="1.5"/>`;
+ s+=`<circle cx="${right}" cy="${y}" r="13" fill="#82b6cd" stroke="#2a7695" stroke-width="1.5"/>`;
+ s+=`<line x1="${left}" y1="${y-39}" x2="${c}" y2="${y-39}" class="dim" marker-start="url(#ARROW)" marker-end="url(#ARROW)"/>`;
+ s+=`<line x1="${c}" y1="${y-39}" x2="${right}" y2="${y-39}" class="dim" marker-start="url(#ARROW)" marker-end="url(#ARROW)"/>`;
+ s+=text((left+c)/2,y-47,`b = ${fmt(b)} см`,'txt','middle');
+ s+=text((right+c)/2,y-47,`a = ${fmt(a)} см`,'txt','middle');
+ s+=text(left,y+31,`${p} г`,'title','middle');
+ s+=text(right,y+31,`${vars.mass} г`,'title','middle');
+ s+=text(left,y+47,'ПРОТИВОВЕС','small','middle');
+ s+=text(right,y+47,'ГРУЗ','small','middle');
+ s+=text(c,y+65,'Передняя кромка основания','small','middle');
+ s+=text(24,238,'Сравнивайте плечи и моменты, затем проверяйте кран без поддержки рукой.','txt');
+ if(trial.checked){let v=t.holds?'Мпр > Мг: УДЕРЖИТСЯ':t.limit?'Мпр = Мг: БЕЗ ЗАПАСА':'Мпр < Мг: ОПРОКИНЕТСЯ';s+=text(876,26,v,'txt','end')}
+ return svg(w,h,s,'Увеличенная учебная модель двух моментов относительно края основания');
+}
+function renderTheory(){
+ let g=model(),sum=tokenSum(),a=g.E/10,b=g.counterArm/10,loadMoment=vars.mass*a,counterMoment=sum*b;
+ $('balanceView').innerHTML=balanceSVG(g);
+ $('tokensCount').textContent=trial.tokens.length;$('selectedMass').textContent=sum+' г';
+ $('frontArm').textContent=fmt(a)+' см';$('backArm').textContent=fmt(b)+' см';$('massValue').textContent=vars.mass;
+ $('loadFormula').textContent=`Мг = ${vars.mass} × ${fmt(a)} =`;
+ $('targetFormula').textContent=`mпр = Мг ÷ ${fmt(b)} =`;
+ $('counterFormula').textContent=`Мпр = ${sum} × ${fmt(b)} = ${fmt(round(counterMoment))} г·см`;
+ $('equation').textContent=`Мг = ${vars.mass} × ${fmt(a)} = ${fmt(loadMoment)} г·см. Расчётный порог массы: ${fmt(loadMoment)} ÷ ${fmt(b)} = ${fmt(round(loadMoment/b))} г. С выбранным противовесом Мпр = ${sum} × ${fmt(b)} = ${fmt(round(counterMoment))} г·см.`;
+ $('momentLoadText').textContent=`${fmt(loadMoment)} г·см`;$('momentBackText').textContent=`${fmt(round(counterMoment))} г·см`;
+ let maxMoment=Math.max(loadMoment,counterMoment,1);
+ $('momentLoadBar').style.width=(loadMoment/maxMoment*100)+'%';$('momentBackBar').style.width=(counterMoment/maxMoment*100)+'%';
+ if(!trial.checked){$('testResult').className='result';$('testResult').textContent='Выберите противовес и сделайте прогноз. Затем сравните моменты.';return}
+ let t=theory(g),prediction=getPred(),ok=t.holds&&prediction==='hold'||(!t.holds)&&prediction==='tip';
+ $('testResult').className='result '+(t.holds?'good':'warn');
+ let status=t.holds?'Момент противовеса больше: модель удерживает груз.':t.limit?'Моменты равны: модель на границе опрокидывания, запаса нет.':'Момент груза больше: модель опрокидывается вперёд.';
+ let difference=round((t.back-t.front)/10);
+ $('testResult').innerHTML=(ok?'<b>Прогноз подтвердился.</b> ':'<b>Прогноз не совпал с моделью.</b> ')+status+`<p style="margin:9px 0 0">Мг = ${fmt(loadMoment)} г·см; Мпр = ${fmt(round(counterMoment))} г·см; разность Мпр − Мг = <b>${difference>0?'+':''}${fmt(difference)} г·см</b>. ${t.holds?'Попробуйте найти самый лёгкий достаточный противовес.':'Попробуйте добавить грузик и повторить сравнение.'}</p>`;
+}
+function checkCalculations(){
+ let g=model(),a=g.E/10,b=g.counterArm/10,target=vars.mass*a/b;
+ let u=Number($('loadMomentAnswer').value),v=Number($('minMassAnswer').value);
+ const p=$('calcFeedback');
+ if(!$('loadMomentAnswer').value||!$('minMassAnswer').value){p.className='calc-feedback';p.textContent='Впишите оба результата перед проверкой.';return}
+ let correct1=Math.abs(u-vars.mass*a)<0.11,correct2=Math.abs(v-target)<.61;
+ if(correct1&&correct2){p.className='calc-feedback correct';p.textContent=`Верно. Теоретически требуется немного больше ${fmt(round(target))} г, чтобы возник запас устойчивости. Теперь соберите противовес из грузиков.`}
+ else{p.className='calc-feedback incorrect';p.textContent=correct1?'Первое действие верно. Во втором разделите момент груза на плечо противовеса.':correct2?'Масса противовеса найдена. В первом действии умножьте массу груза на плечо a.':'Проверьте порядок: сначала умножение массы груза на a, затем деление полученного момента на b.'}
+}
+function rows(g){
+ $('holesTable').innerHTML=g.bars.map(q=>`<tr><td>${q.id}</td><td>${fmt(q.x)}</td><td>${fmt(q.y)}</td><td style="text-align:left;font-weight:400">${q.kind}</td></tr>`).join('');
+ $('cornersTable').innerHTML=g.corners.map((q,i)=>`<tr><td>${i+1}</td><td>${fmt(q[0])}</td><td>${fmt(q[1])}</td><td>${i===g.corners.length-1?'замкнуть с 1':''}</td></tr>`).join('');
+ $('slotSpecs').textContent='Оба чертежа показаны в едином масштабе. Все размеры указаны в миллиметрах; ширина всех прорезей — 2,4 мм.';
+}
+function renderSteps(g){const steps=[
+ ['Разметить боковины',`Начертите два одинаковых контура высотой ${g.H} мм. Нижняя ножка имеет ширину 26 мм. Все отверстия P01–P04 и P06–P11 указаны в таблице на первой странице.`],
+ ['Основание с четырьмя прорезями',`Вырежьте два слоя основания ${g.L} × ${g.W} мм и сделайте в каждом четыре прорези. Пара 26 × ${fmt(g.slitWidth)} мм для боковин и пара 30 × ${fmt(g.slitWidth)} мм для опор лебёдки. Совместите слои и склейте.`],
+ ['Собрать каркас',`Вставьте в отверстия двух боковин десять поперечин длиной 65 мм, выдержав расстояние 40 мм между боковинами. Соединения поперечин неподвижны.`],
+ ['Вставить стойку и опоры лебёдки',`Вставьте ножки боковин в передние прорези. Отдельно вставьте две трапециевидные опоры лебёдки высотой 64 мм в задние прорези. Закрепите их к основанию и соедините неподвижной зубочисткой P12 на высоте 18 мм.`],
+ ['Установить ось P05',`Пропустите деревянную шпажку длиной 80 мм через отверстия P05 на высоте 52 мм только в опорах лебёдки. На середине закрепите барабан из бумажного скотча шириной 40 мм и две щёчки 14 × 14 мм; снаружи установите рукоятку.`],
+ ['Установить направляющие',`На неподвижных зубочистках P06, P07, P08, P10 и P11 закрепите по две квадратные щёчки 14 × 14 мм (внутренние грани по 2,5 мм от оси нити). P09 остаётся обычной поперечиной без щёчек.`],
+ ['Провести нить',`Привяжите нить к барабану, поднимите её к поперечине P06, затем проведите её через направляющие P06, P07 и P08, над простой поперечиной P09, через P10 и P11 и опустите к грузу. Ход нити должен быть свободным.`],
+ ['Испытать кран',`Поднимите груз на небольшую высоту. Зафиксируйте ручку лебёдки лентой к её опоре, отпустите модель и проверьте остойчивость. Измените массу противовеса и запишите результат.`]
+ ];$('steps').innerHTML=steps.map(([name,body],i)=>`<article class="step"><span class="stepnumber">${i+1}</span><div><h3>${name}</h3><p>${body}</p><label class="stepcheck"><input type="checkbox"> Выполнено</label></div></article>`).join('')}
+
+function drawAll(){let g=model();$('viewSide').innerHTML=sideView(g);$('viewTop').innerHTML=topView(g);$('viewFront').innerHTML=frontView(g);$('basePart').innerHTML=topView(g,true);$('winchPart').innerHTML=detailedWinch(g);$('guidesPart').innerHTML=detailedGuides(g);rows(g);renderTheory();renderSteps(g);syncOverviewLayout()}
+function syncOverviewLayout(){
+ const side=$('viewSide'),top=$('viewTop'),front=$('viewFront');
+ if(!side||!top||!front)return;
+ const sideSVG=side.querySelector('svg'),topSVG=top.querySelector('svg'),frontSVG=front.querySelector('svg');
+ if(!sideSVG||!topSVG||!frontSVG)return;
+ const sideRect=sideSVG.getBoundingClientRect();
+ const topWidth=top.clientWidth,frontWidth=front.clientWidth;
+ if(!sideRect.width||!sideRect.height||!topWidth||!frontWidth)return;
+ function stretch(svg,w,h){
+  if(!svg.dataset.originalW){svg.dataset.originalW=svg.viewBox.baseVal.width;svg.dataset.originalH=svg.viewBox.baseVal.height;}
+  svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+  const back=Array.from(svg.children).filter(e=>e.tagName.toLowerCase()==='rect').slice(0,2);
+  for(let r of back){r.setAttribute('width',w);r.setAttribute('height',h);}
+ }
+ // Extend the graph paper only; never stretch the actual crane geometry.
+ let tw=Number(topSVG.dataset.originalW)||topSVG.viewBox.baseVal.width;
+ let th=Number(topSVG.dataset.originalH)||topSVG.viewBox.baseVal.height;
+ stretch(topSVG,Math.max(tw,tw*topWidth/sideRect.width),th);
+ const fw=Number(frontSVG.dataset.originalW)||frontSVG.viewBox.baseVal.width;
+ const fh=Number(frontSVG.dataset.originalH)||frontSVG.viewBox.baseVal.height;
+ const nw=Math.max(fw,fh*frontWidth/sideRect.height);
+ const nh=Math.max(fh,nw*sideRect.height/frontWidth);
+ stretch(frontSVG,nw,nh);
+ const draw=frontSVG.querySelector('[data-front-drawing]');
+ if(draw){
+  draw.removeAttribute('transform');
+  const bb=draw.getBBox();
+  const dx=(nw-bb.width)/2-bb.x;
+  const dy=30+(nh-30-bb.height)/2-bb.y;
+  draw.setAttribute('transform',`translate(${dx.toFixed(2)} ${dy.toFixed(2)})`);
+ }
+}
+let overviewResizeScheduled=false;
+function scheduleOverviewLayout(){
+ if(overviewResizeScheduled)return;
+ overviewResizeScheduled=true;
+ requestAnimationFrame(()=>{overviewResizeScheduled=false;syncOverviewLayout()});
+}
+window.addEventListener('resize',scheduleOverviewLayout);
+function initFields(){let target=$('fields');target.innerHTML=Object.entries(defs).map(([k,d])=>`<div class="control"><div class="ctop"><label for="${k}Input">${d.name}</label><span class="minmax">${d.min}–${d.max} см</span></div><div class="stepper"><button class="smallbtn" data-for="${k}" data-delta="-1" aria-label="Уменьшить ${d.name}">−</button><div class="valuefield"><input type="number" inputmode="numeric" min="${d.min}" max="${d.max}" step="1" id="${k}Input" value="${d.initial}"><span class="unit">см</span></div><button class="smallbtn" data-for="${k}" data-delta="1" aria-label="Увеличить ${d.name}">+</button></div><input type="range" id="${k}Slider" min="${d.min}" max="${d.max}" step="1" value="${d.initial}" aria-label="${d.name}"></div>`).join('');
+ function setVar(k,newV){let d=defs[k],v=clamp(Math.round(newV),d.min,d.max);vars[k]=v*10;$(k+'Input').value=v;$(k+'Slider').value=v;resetLabMath();drawAll()}
+ for(const k in defs){$(k+'Input').addEventListener('change',e=>setVar(k,Number(e.target.value)||vars[k]/10));$(k+'Slider').addEventListener('input',e=>setVar(k,Number(e.target.value)))}
+ document.querySelectorAll('[data-for]').forEach(b=>b.addEventListener('click',()=>setVar(b.dataset.for,vars[b.dataset.for]/10+Number(b.dataset.delta))));
+}
+function resetCalc(){if($('loadMomentAnswer')){$('loadMomentAnswer').value='';$('minMassAnswer').value='';$('calcFeedback').className='calc-feedback';$('calcFeedback').textContent='Впишите оба результата, затем сравните их с моделью.'}}
+function initEvents(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(t=>{t.classList.toggle('active',t===btn);t.setAttribute('aria-selected',String(t===btn))});document.querySelectorAll('.content>section').forEach(s=>s.classList.toggle('active',s.id===btn.dataset.view));$('export').disabled=['assembly','trial'].includes(btn.dataset.view);if(btn.dataset.view==='overview')scheduleOverviewLayout();}));
+ $('calcCheck').addEventListener('click',checkCalculations);
+ $('massRange').addEventListener('input',e=>{vars.mass=Number(e.target.value);trial.checked=false;resetCalc();renderTheory()});
+ document.querySelectorAll('[data-token]').forEach(b=>b.addEventListener('click',()=>{if(tokenSum()+Number(b.dataset.token)>300)return;trial.tokens.push(Number(b.dataset.token));trial.checked=false;renderTheory()}));
+ $('undo').addEventListener('click',()=>{trial.tokens.pop();trial.checked=false;renderTheory()});$('clear').addEventListener('click',()=>{trial.tokens=[];trial.checked=false;renderTheory()});
+ document.querySelectorAll('input[name=guess]').forEach(x=>x.addEventListener('change',()=>{trial.checked=false;renderTheory()}));
+ $('evaluate').addEventListener('click',()=>{if(!getPred()){$('testResult').textContent='Сначала выберите прогноз.';return}trial.checked=true;renderTheory()});
+ $('record').addEventListener('click',()=>{let v=Number($('realMass').value);if(!Number.isFinite(v)||v<0||v>300)return;trial.records.push({mass:vars.mass,counter:v,outcome:$('realResult').value});$('realLog').innerHTML=trial.records.map((r,i)=>`<tr><td>${i+1}</td><td>${r.mass} г</td><td>${r.counter} г</td><td>${r.outcome}</td></tr>`).join('')});
+ $('print').addEventListener('click',()=>window.print());
+ $('export').addEventListener('click',()=>{const active=document.querySelector('.content>section.active');if(active.id==='assembly')return;
+ let markup;
+ if(active.id==='overview'){
+   // All 3 projections in one standalone SVG; nested source SVGs keep their own dimensions and pattern IDs.
+   let specs=[['viewSide',22,43,680,500],['viewFront',727,43,310,500],['viewTop',22,557,1015,270],['basePart',22,847,680,270]];
+   let blocks=specs.map(([name,x,y,w,h])=>{let src=$(name).querySelector('svg'),v=src.getAttribute('viewBox');return `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="${v}">${src.innerHTML}</svg>`}).join('');
+   const holeData=model().bars.map((r,i)=>`<text x="730" y="${892+i*22}" fill="#31556b" font-size="14" font-family="Arial">${r.id}: X ${fmt(r.x)} мм, Y ${fmt(r.y)} мм</text>`).join('');
+   markup=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 1160"><rect width="1060" height="1160" fill="white"/><text x="25" y="28" fill="#173b52" font-family="Arial" font-size="22" font-weight="700">Кран. Общие виды 2D</text>${blocks}<text x="730" y="870" fill="#173b52" font-family="Arial" font-size="17" font-weight="700">Отверстия боковин</text>${holeData}</svg>`;
+ }else{
+   const drawing=active.querySelector('.paper svg');if(!drawing)return;let clone=drawing.cloneNode(true);clone.setAttribute('xmlns','http://www.w3.org/2000/svg');markup=new XMLSerializer().serializeToString(clone);
+ }
+ let blob=new Blob([markup],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.download='Кран_2D_'+active.id+'.svg';a.href=url;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)});
+}
+
+// Лист 03: основание и опора лебёдки в одном масштабе; длинная ось опоры вертикальна.
+function basePlan(g){
+ const w=1200,h=710;
+ const scale=Math.min(4.55,650/g.L,455/g.W);
+ const bx=52,by=135,BX=x=>bx+x*scale,BY=y=>by+y*scale;
+ const baseRight=BX(g.L),baseBottom=BY(g.W);
+ const cx=940,baseY=500,S=scale,SX=x=>cx+x*S,SY=y=>baseY-y*S;
+ let z='';
+ const pt=(x,y,t,size=15,weight=400,anchor='start',fill='#31556b',extra='')=>`<text x="${round(x)}" y="${round(y)}" text-anchor="${anchor}" style="font-family:Arial,sans-serif;font-size:${size}px;font-weight:${weight};fill:${fill}" ${extra}>${htmlEscape(t)}</text>`;
+ const ln=(x1,y1,x2,y2,sw=1,stroke='#517487',extra='')=>`<line x1="${round(x1)}" y1="${round(y1)}" x2="${round(x2)}" y2="${round(y2)}" stroke="${stroke}" stroke-width="${sw}" ${extra}/>`;
+ const hd=(a,b,y,ya,yb,label)=>ln(a,ya,a,y+5,.9)+ln(b,yb,b,y+5,.9)+ln(a,y,b,y,1,'#517487','marker-start="url(#ARROW)" marker-end="url(#ARROW)"')+pt((a+b)/2,y-7,label,16,600,'middle','#294e63');
+ const vd=(x,a,b,xa,xb,label)=>ln(xa,a,x-5,a,.9)+ln(xb,b,x-5,b,.9)+ln(x,a,x,b,1,'#517487','marker-start="url(#ARROW)" marker-end="url(#ARROW)"')+pt(x-8,(a+b)/2,label,16,600,'middle','#294e63',`transform="rotate(-90 ${x-8} ${(a+b)/2})"`);
+
+ z+=pt(38,34,'ОСНОВАНИЕ · ВИД СВЕРХУ',20,700,'start','#163f57');
+ z+=pt(38,57,'1 деталь · прорези под стойку и опоры лебёдки',15,400,'start','#587789');
+ z+=pt(735,34,'ОПОРА ЛЕБЁДКИ · 2 ОДИНАКОВЫЕ ДЕТАЛИ',20,700,'start','#163f57');
+ z+=pt(735,57,'Деталь расположена вертикально · единый масштаб',15,400,'start','#587789');
+
+ // Основание: полный контур, четыре прорези и читаемые обозначения.
+ z+=`<rect x="${BX(0)}" y="${BY(0)}" width="${g.L*S}" height="${g.W*S}" fill="#eaf4f9" stroke="#175e82" stroke-width="2.2"/>`;
+ for(let i=0;i<g.slots.length;i++){
+  const yMast=g.slots[i],yWinch=g.winchSlots[i],slotA=[10,40],slotB=[g.mastBack,g.mastFront];
+  z+=`<rect x="${BX(slotA[0])}" y="${BY(yWinch)-g.slitWidth*S/2}" width="${30*S}" height="${g.slitWidth*S}" fill="#fff" stroke="#b26f30" stroke-width="1.8"/>`;
+  z+=`<rect x="${BX(slotB[0])}" y="${BY(yMast)-g.slitWidth*S/2}" width="${26*S}" height="${g.slitWidth*S}" fill="#fff" stroke="#b26f30" stroke-width="1.8"/>`;
+  z+=pt(BX(25),BY(yWinch)-17,'A'+(i+1),16,700,'middle','#9a612e');
+  z+=pt(BX(g.mastCenter),BY(yMast)-17,'Б'+(i+1),16,700,'middle','#9a612e');
+ }
+ z+=hd(BX(0),BX(g.L),baseBottom+30,baseBottom,baseBottom,`L = ${g.L} мм`);
+ z+=vd(bx-27,BY(0),baseBottom,bx,bx,`W = ${g.W} мм`);
+ z+=vd(baseRight+23,BY(g.winchSlots[0]),BY(g.winchSlots[1]),baseRight,baseRight,'50 мм');
+ z+=vd(baseRight+43,BY(g.slots[0]),BY(g.slots[1]),baseRight,baseRight,'40 мм');
+ z+=hd(BX(10),BX(40),by-28,by,by,'30 мм');
+ z+=hd(BX(g.mastBack),BX(g.mastFront),by-53,by,by,'26 мм');
+ z+=pt(bx,baseBottom+66,`A1/A2: 30 × ${fmt(g.slitWidth)} мм; X = 10–40 мм.`,15,500,'start','#31556b');
+ z+=pt(bx,baseBottom+90,`Б1/Б2: 26 × ${fmt(g.slitWidth)} мм; X = ${fmt(g.mastBack)}–${fmt(g.mastFront)} мм.`,15,500,'start','#31556b');
+ z+=pt(bx,baseBottom+108,`A1/A2: Y = ${fmt(g.winchSlots[0])} и ${fmt(g.winchSlots[1])} мм (50 мм); Б1/Б2: Y = ${fmt(g.slots[0])} и ${fmt(g.slots[1])} мм (40 мм).`,15,500,'start','#31556b');
+
+ // Опора: 64 мм по вертикали, ширина 30 мм у основания и 18 мм наверху.
+ const H=g.winch.height,topY=SY(H),bottomY=SY(-6),baseLeft=SX(-15),baseRightStand=SX(15);
+ const contour=[[-15,-6],[15,-6],[15,0],[9,H],[-9,H],[-15,0]];
+ z+=`<path d="${contour.map(([x,y],i)=>(i?'L':'M')+round(SX(x))+' '+round(SY(y))).join(' ')} Z" fill="#eaf4f9" stroke="#175e82" stroke-width="2.2" stroke-linejoin="round"/>`;
+
+ // Отверстия: координаты отсчитываются вверх от нижней кромки основания.
+ const yP12=SY(g.winch.braceZ),yP05=SY(g.winch.axleZ);
+ z+=`<circle cx="${cx}" cy="${yP12}" r="4.2" fill="#fff" stroke="#b96740" stroke-width="1.7"/>`;
+ z+=`<circle cx="${cx}" cy="${yP05}" r="4.2" fill="#fff" stroke="#b96740" stroke-width="1.7"/>`;
+
+ // Размеры контура и выступа.
+ z+=hd(SX(-9),SX(9),topY-24,topY,topY,'18 мм');
+ z+=hd(SX(-15),SX(15),baseY+55,baseY,baseY,'30 мм');
+ z+=vd(cx-112,topY,baseY,SX(-9),SX(-15),`${H} мм`);
+ z+=vd(cx-78,baseY,bottomY,SX(-15),SX(-15),'6 мм');
+
+ // Подписи отверстий вынесены вправо, не пересекаются с размерными линиями.
+ const labelX=cx+15*S+18,leaderX=cx+15*S+10;
+ z+=ln(cx+6,yP05,leaderX,yP05,.9,'#8ba7b6');
+ z+=pt(labelX,yP05-4,`P05 · ${fmt(g.winch.axleZ)} мм`,14,700,'start','#31556b');
+ z+=pt(labelX,yP05+15,'Ø3,2 мм · ось барабана',12.5,500,'start','#587789');
+ z+=ln(cx+6,yP12,leaderX,yP12,.9,'#8ba7b6');
+ z+=pt(labelX,yP12-4,`P12 · ${fmt(g.winch.braceZ)} мм`,14,700,'start','#31556b');
+ z+=pt(labelX,yP12+15,'Ø2,5 мм · поперечина',12.5,500,'start','#587789');
+
+ z+=pt(790,590,'Вырезать 2 одинаковые детали.',16,700,'start','#31556b');
+ z+=pt(790,618,'Нижний выступ 6 мм входит в пазы A1/A2.',15,500,'start','#31556b');
+ z+=pt(790,644,'P05 вращается вместе с барабаном; P12 неподвижна.',15,500,'start','#31556b');
+ return svg(w,h,z,'Основание и вертикально расположенная опора лебёдки в едином масштабе');
+}
+let craneMotion={playing:false,raf:0,started:0};
+function threadPath(g,yLoad,yWinch){
+ const yBeam=g.H+43-g.beamY;
+ const xOf=id=>52+g.bars.find(q=>q.id===id).x;
+ const xTip=52+g.tip-7;
+ const xP09=xOf('P09');
+ return `M ${52+g.winch.x} ${yWinch} L ${xOf('P06')} ${yBeam} L ${xOf('P07')} ${yBeam} L ${xOf('P08')} ${yBeam} L ${xP09-4} ${yBeam} Q ${xP09} ${yBeam-5} ${xP09+4} ${yBeam} L ${xOf('P10')} ${yBeam} L ${xOf('P11')} ${yBeam} L ${xTip} ${yBeam} L ${xTip} ${yLoad}`;
+}
+function addMotionLayer(g){
+ const root=$('viewSide').querySelector('svg');if(!root)return;
+ const ns='http://www.w3.org/2000/svg';
+ const group=document.createElementNS(ns,'g');group.id='motionLayer';group.setAttribute('visibility',craneMotion.playing?'visible':'hidden');
+ let x=52+(g.tip-7),ax=52+g.winch.x;
+ let yBeam=g.H+43-g.beamY,yAxle=g.H+43-g.winch.axleZ,yWinch=yAxle-5;
+ const low=Math.max(18,g.beamY-18),initialY=yBeam+low;
+ group.innerHTML=`<path id="motionWire" d="${threadPath(g,initialY,yWinch)}" fill="none" stroke="#158374" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/><g id="motionWeight" transform="translate(${x} ${initialY})"><path d="M 0 -2 V 2" stroke="#158374" stroke-width="1.5"/><rect x="-9" y="2" width="18" height="15" fill="#eac795" stroke="#9c682d" stroke-width=".9" rx="1"/><text x="0" y="12" font-size="5" fill="#593b19" text-anchor="middle">груз</text></g>`;
+ root.appendChild(group);return {x,ax,yBeam,yWinch};
+}
+function drawMotionFrame(timestamp){
+ if(!craneMotion.playing)return;
+ if(!craneMotion.started)craneMotion.started=timestamp;
+ let g=model(),root=$('viewSide'),group=root.querySelector('#motionLayer');
+ if(group){
+  let x=52+g.tip-7,ax=52+g.winch.x;
+  let yBeam=g.H+43-g.beamY,yAxle=g.H+43-g.winch.axleZ,yWinch=yAxle-5;
+  // Ограничиваем нижнее положение: низ груза остаётся над верхней плоскостью основания.
+  let low=Math.max(18,g.beamY-18),high=18;
+  // Полный цикл 40 с: 16,8 с подъём, 3,2 с остановка, 16,8 с опускание, 3,2 с остановка внизу.
+  const cycle=40000,phase=((timestamp-craneMotion.started)%cycle)/cycle;
+  let wave;
+  if(phase<.08) wave=0;
+  else if(phase<.50){const u=(phase-.08)/.42;wave=(1-Math.cos(Math.PI*u))/2;}
+  else if(phase<.58) wave=1;
+  else {const u=(phase-.58)/.42;wave=1-(1-Math.cos(Math.PI*u))/2;}
+  let y=yBeam+low-wave*(low-high);
+  group.setAttribute('visibility','visible');
+  const line=group.querySelector('#motionWire'),weight=group.querySelector('#motionWeight');
+  if(line)line.setAttribute('d',threadPath(g,y,yWinch));
+  if(weight)weight.setAttribute('transform',`translate(${x} ${y})`);
+  const handle=root.querySelector('#rotatingHandle');
+  // Drum diameter ~9 mm: winding and unwinding rotate the crank in both directions.
+  const turns=(low-high)/(Math.PI*9);
+  if(handle)handle.setAttribute('transform',`rotate(${(-wave*turns*360).toFixed(2)} ${ax} ${yAxle})`);
+ }
+ craneMotion.raf=requestAnimationFrame(drawMotionFrame);
+}
+function toggleMotion(){
+ craneMotion.playing=!craneMotion.playing;
+ craneMotion.started=0;
+ const group=$('viewSide').querySelector('#motionLayer');if(group)group.setAttribute('visibility',craneMotion.playing?'visible':'hidden');
+ $('liftBtn').textContent=craneMotion.playing?'Остановить подъём':'Показать подъём';
+ if(!craneMotion.playing){let handle=$('viewSide').querySelector('#rotatingHandle');if(handle)handle.removeAttribute('transform');}
+ $('liftInfo').textContent=craneMotion.playing?'Учебная анимация подъёма и опускания груза.':'Анимация выключена. Чертёж без нити и груза.';
+ cancelAnimationFrame(craneMotion.raf);
+ if(craneMotion.playing)craneMotion.raf=requestAnimationFrame(drawMotionFrame);
+}
+// Redesigned laboratory: new, spatially grounded crane view and an analog mass dial.
+const lab={payload:20,ballast:0,run:false,calcValid:false};
+const MASS_LIMIT=70;
+function labSVG(g){
+ const sc=Math.min(2.45,420/g.H,810/g.tip),ox=Math.max(42,(980-g.tip*sc)/2-15),ground=512,X=x=>ox+x*sc,Y=y=>ground-y*sc;
+ const pivot=X(g.L),tipX=X(g.tip-7),rearX=X(g.bars.find(q=>q.id==='P06').x),topY=Y(g.beamY);
+ const susp=Math.min(95,g.H*sc*.48);const bodyY=topY+susp;
+ const silhouette=g.corners.map(([x,y],i)=>(i?'L':'M')+X(x).toFixed(1)+','+Y(y).toFixed(1)).join(' ')+' Z';
+ const rot=lab.run&&lab.ballast*g.counterArm<lab.payload*g.E?8:0;
+ return `<svg viewBox="0 0 980 570" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Учебная модель крана с подвешенным грузом и противовесом">
+ <defs><pattern id="labGrid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" stroke="#deebf0" stroke-width="1" fill="none"/></pattern></defs>
+ <rect width="980" height="570" fill="#f8fcfe"/><rect width="980" height="570" fill="url(#labGrid)"/>
+ <line x1="22" y1="${ground+g.t*sc+3}" x2="958" y2="${ground+g.t*sc+3}" stroke="#a8bdc9" stroke-width="2"/>
+ <g id="labRig" style="transform-origin:${pivot}px ${ground}px;transition:transform .9s ease;transform:rotate(${rot}deg)">
+  <rect x="${ox}" y="${ground}" width="${g.L*sc}" height="${g.t*sc}" rx="1" fill="#d4e7f2" stroke="#2b6a88" stroke-width="3"/>
+  <path d="${silhouette}" stroke="#276786" stroke-width="3.5" fill="#e0f0f8" stroke-linejoin="round"/>
+  <path d="M ${X(g.winch.x)} ${Y(g.winch.axleZ)} L ${X(g.winch.x)} ${Y(g.winch.height)} M ${X(g.winch.x-14)} ${ground} L ${X(g.winch.x-9)} ${Y(g.winch.height)} L ${X(g.winch.x+9)} ${Y(g.winch.height)} L ${X(g.winch.x+14)} ${ground} Z" fill="#dbeaf1" stroke="#276786" stroke-width="3"/>
+  <circle cx="${X(g.winch.x)}" cy="${Y(g.winch.axleZ)}" r="8" fill="#c59a63" stroke="#986a35" stroke-width="2"/>
+  <line x1="${X(g.winch.x)}" y1="${Y(g.winch.axleZ)}" x2="${X(g.bars.find(q=>q.id==='P06').x)}" y2="${topY}" stroke="#167f70" stroke-width="3"/>
+  <line x1="${X(g.bars.find(q=>q.id==='P06').x)}" y1="${topY}" x2="${tipX}" y2="${topY}" stroke="#167f70" stroke-width="3"/>
+  <line x1="${tipX}" y1="${topY}" x2="${tipX}" y2="${bodyY}" stroke="#167f70" stroke-width="3"/>
+  <path d="M ${tipX} ${bodyY} v 9" stroke="#167f70" stroke-width="4"/>
+  <rect x="${tipX-24}" y="${bodyY+9}" width="48" height="43" rx="6" fill="#8dbad2" stroke="#2c7393" stroke-width="3"/>
+  <text x="${tipX}" y="${bodyY+37}" font-size="19" text-anchor="middle" fill="#143f54" font-weight="bold">${lab.payload} г</text>
+  <line x1="${rearX}" y1="${topY}" x2="${rearX}" y2="${topY+40}" stroke="#b7834a" stroke-width="3"/>
+  <rect x="${rearX-27}" y="${topY+40}" width="54" height="39" rx="5" fill="#e9c698" stroke="#ab7940" stroke-width="3"/>
+  <text x="${rearX}" y="${topY+65}" font-size="18" text-anchor="middle" font-weight="bold" fill="#694522">${lab.ballast} г</text>
+ </g>
+ <line x1="${pivot}" y1="${ground+g.t*sc+4}" x2="${pivot}" y2="${ground+g.t*sc+22}" stroke="#ba7737" stroke-width="3"/>
+ <path d="M ${pivot-11} ${ground+g.t*sc+23} L ${pivot+11} ${ground+g.t*sc+23} L ${pivot} ${ground+g.t*sc+5}Z" fill="#c5dbe6" stroke="#467589" stroke-width="2"/>
+ <text x="${pivot}" y="556" text-anchor="middle" font-size="16" fill="#406a7d">передний край опоры</text>
+ <text x="${ox+g.L*sc/2}" y="32" text-anchor="middle" font-size="16" fill="#456f83">противовес</text><text x="${tipX}" y="32" text-anchor="middle" font-size="16" fill="#456f83">поднимаемый груз</text>
+ </svg>`;
+}
+
+function resetLabMath(){lab.calcValid=false;lab.run=false;$('userMoment').value='';$('userCounter').value='';$('verifyMath').disabled=false;$('runLab').disabled=true;$('mathFeedback').className='math-feedback';$('mathFeedback').textContent='Рассчитайте оба значения. Проверка не подставляет ответы автоматически.';}
+function verifyLabMath(){
+ const g=model(),a=g.E/10,b=g.counterArm/10,correctMoment=lab.payload*a,correctCounter=correctMoment/b;
+ const momText=$('userMoment').value.trim().replace(',','.');const massText=$('userCounter').value.trim().replace(',','.');
+ const m=Number(momText),c=Number(massText);const status=$('mathFeedback');
+ if(!momText||!massText||!Number.isFinite(m)||!Number.isFinite(c)){status.className='math-feedback err';status.textContent='Заполните оба поля числами.';return;}
+ const mOk=Math.abs(m-correctMoment)<0.11,cOk=Math.abs(c-correctCounter)<0.55;
+ lab.calcValid=mOk&&cOk;$('runLab').disabled=!lab.calcValid;
+ status.className='math-feedback '+(lab.calcValid?'ok':'err');
+ status.textContent=lab.calcValid?'Оба расчёта верны. Выберите пробную массу противовеса и запустите испытание.':(!mOk?'Ошибка в моменте груза. Умножьте массу на вылет в сантиметрах.':'Проверьте массу противовеса. Разделите момент груза на плечо противовеса.');
+ renderLab();
+}
+function minBallastToHold(g,payload){
+ // Strictly greater counterweight moment; 1-g increments for classroom weights.
+ return Math.floor((payload*g.E/g.counterArm)+1e-8)+1;
+}
+function canBalance(g,payload){return payload+minBallastToHold(g,payload)<=MASS_LIMIT;}
+function syncAllowedLoads(g){
+ const buttons=[...document.querySelectorAll('[data-payload]')];
+ for(const btn of buttons){let p=Number(btn.dataset.payload);btn.disabled=!canBalance(g,p);
+  btn.title=btn.disabled?'Для этого груза потребовалось бы больше 70 г суммарно. Измените вылет.':'Доступный груз';}
+ if(!canBalance(g,lab.payload)){
+  let options=buttons.filter(b=>!b.disabled).map(b=>Number(b.dataset.payload));
+  lab.payload=options.length?Math.max(...options):5;
+  resetLabMath();
+ }
+ buttons.forEach(btn=>btn.setAttribute('aria-pressed',String(Number(btn.dataset.payload)===lab.payload)));
+ const left=MASS_LIMIT-lab.payload;
+ const note=$('loadBudgetNote');
+ if(note)note.textContent=`Общая масса поднимаемого груза и противовеса не должна превышать 70 г.`;
+ const input=$('selectedCounter');if(input){input.max=String(left);if(lab.ballast>left){lab.ballast=left;input.value=left;lab.run=false;}}
+ if($('counterBudget'))$('counterBudget').textContent='Суммарная масса не более 70 г.';
+}
+function renderLab(){
+ const g=model();syncAllowedLoads(g);const a=g.E/10,b=g.counterArm/10,moment=lab.payload*a,momentBack=lab.ballast*b;
+ $('labCrane').innerHTML=labSVG(g);
+ $('labStageLabel').textContent=lab.run?(momentBack>moment?'Расчётная модель удержалась':Math.abs(momentBack-moment)<.01?'Без запаса устойчивости':'Расчётная модель опрокинулась'):'До испытания';
+ const box=$('labFeedback');
+ if(!lab.run){box.removeAttribute('data-result');box.innerHTML=lab.calcValid?'<b>Расчёт выполнен.</b><p>Установите массу противовеса, которую получили при расчёте, и начните испытание.</p>':'<b>Расчёт ещё не проверен.</b><p>Сначала самостоятельно вычислите два значения.</p>';return;}
+ const stable=momentBack>moment,neutral=Math.abs(momentBack-moment)<.01;
+ box.dataset.result=stable?'ok':'tip';
+ box.innerHTML=stable?`<b>В модели моменты уравновешены с запасом.</b><p>Момент противовеса: ${fmt(round(momentBack))} г·см, момент груза: ${fmt(moment)} г·см. Испытайте меньшую массу и найдите границу.</p>`:
+ neutral?`<b>Моменты равны.</b><p>${fmt(moment)} г·см с каждой стороны. Запаса устойчивости нет; для реального крана этого недостаточно.</p>`:
+ `<b>В модели кран опрокидывается.</b><p>Момент груза ${fmt(moment)} г·см больше момента противовеса ${fmt(round(momentBack))} г·см. Попробуйте другой противовес, меньший груз или меньший вылет.</p>`;
+}
+function drawAll(){
+ let g=model();$('viewSide').innerHTML=sideView(g);$('viewTop').innerHTML=topView(g);$('basePart').innerHTML=basePlan(g);$('viewFront').innerHTML=frontView(g);
+ addMotionLayer(g);$('winchPart').innerHTML=detailedWinch(g);$('guidesPart').innerHTML=detailedGuides(g);
+ rows(g);renderLab();renderSteps(g);syncOverviewLayout();
+}
+function syncOverviewLayout(){
+ let front=$('viewFront')?.querySelector('svg');if(!front)return;
+ // Keep the front view centered in its own millimeter sheet, never resize the crane geometry.
+ const group=front.querySelector('[data-front-drawing]');if(!group)return;
+ group.removeAttribute('transform');
+ let vb=front.viewBox.baseVal,bb=group.getBBox(),dx=(vb.width-bb.width)/2-bb.x,dy=(vb.height-bb.height)/2-bb.y;
+ group.setAttribute('transform',`translate(${dx.toFixed(2)} ${dy.toFixed(2)})`);
+}
+function initEvents(){
+ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+   document.querySelectorAll('.tab').forEach(t=>{let sel=t===btn;t.classList.toggle('active',sel);t.setAttribute('aria-selected',String(sel))});
+   document.querySelectorAll('.content>section').forEach(s=>s.classList.toggle('active',s.id===btn.dataset.view));
+   $('workspace').classList.toggle('show-geometry',btn.dataset.view==='overview');
+   $('export').disabled=['assembly','trial'].includes(btn.dataset.view);
+   if(btn.dataset.view==='overview')scheduleOverviewLayout();
+ }));
+ $('liftBtn').addEventListener('click',toggleMotion);
+ document.querySelectorAll('[data-payload]').forEach(b=>b.addEventListener('click',()=>{
+  if(b.disabled)return;lab.payload=Number(b.dataset.payload);
+  document.querySelectorAll('[data-payload]').forEach(e=>e.setAttribute('aria-pressed',String(e===b)));
+  resetLabMath();renderLab();
+ }));
+ for(const id of ['userMoment','userCounter'])$(id).addEventListener('input',()=>{lab.calcValid=false;lab.run=false;$('runLab').disabled=true;$('mathFeedback').className='math-feedback';$('mathFeedback').textContent='Новые значения нужно проверить.';renderLab()});
+ $('verifyMath').addEventListener('click',verifyLabMath);
+ $('selectedCounter').addEventListener('change',e=>{let n=Number(e.target.value);lab.ballast=Math.max(0,Math.min(MASS_LIMIT-lab.payload,Number.isFinite(n)?Math.round(n):0));e.target.value=lab.ballast;lab.run=false;renderLab()});
+ $('runLab').addEventListener('click',()=>{if(!lab.calcValid)return;lab.ballast=clamp(Math.round(Number($('selectedCounter').value)||0),0,MASS_LIMIT-lab.payload);$('selectedCounter').value=lab.ballast;lab.run=true;renderLab()});
+ $('print').addEventListener('click',()=>window.print());
+ $('export').addEventListener('click',()=>{
+  let active=document.querySelector('.content>section.active');if(['trial','assembly'].includes(active.id))return;
+  let markup;
+  if(active.id==='overview'){
+   const blocks=[['viewSide',20,50,720,540],['viewFront',770,50,330,540],['viewTop',20,625,720,365],['basePart',20,1010,1080,380]]
+    .map(([id,x,y,w,h])=>{let original=$(id).querySelector('svg'),clone=original.cloneNode(true);clone.querySelector('#motionLayer')?.remove();return `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="${clone.getAttribute('viewBox')}">${clone.innerHTML}</svg>`}).join('');
+   let rows=model().bars.map((r,i)=>`<text x="20" y="${1040+i*17}" fill="#31556b" font-size="16" font-family="Arial">${r.id}: X ${fmt(r.x)} мм, Y ${fmt(r.y)} мм</text>`).join('');
+   markup=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 1260"><rect width="1140" height="1260" fill="white"/><text x="25" y="28" font-family="Arial" font-size="24" font-weight="700" fill="#173b52">Кран. Рабочие чертежи</text>${blocks}<text x="20" y="1010" font-family="Arial" font-size="18" font-weight="700">Отверстия боковин (координаты)</text>${rows}</svg>`;
+  }else{let d=active.querySelector('.paper svg');if(!d)return;let c=d.cloneNode(true);c.setAttribute('xmlns','http://www.w3.org/2000/svg');markup=new XMLSerializer().serializeToString(c)}
+  let url=URL.createObjectURL(new Blob([markup],{type:'image/svg+xml;charset=utf-8'})),a=document.createElement('a');a.download='Кран_2D_'+active.id+'.svg';a.href=url;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)
+ });
+}
+
+
+function initProgTextEditor(){
+ const STORE_KEY='crane_v16_prog_text_edits';
+ let saved={};
+ try{
+  const embedded=window.__CRANE_PROG_TEXTS;
+  if(embedded&&typeof embedded==='object')saved={...embedded};
+  else saved=JSON.parse(localStorage.getItem(STORE_KEY)||'{}')||{};
+ }catch(e){saved={};}
+ let unlocked=false;
+ const keyInput=$('progKey'),toggle=$('progToggle'),saveButton=$('progSaveHtml'),status=$('progStatus');
+ const excluded='.paper, .draw-foot, .tablewrap, svg, script, style, .prog-access, input, textarea, select, option, #liftInfo, #labStageLabel, #mathFeedback, #labFeedback, #counterBudget, #loadBudgetNote, #holesTable, #cornersTable, #slotSpecs';
+
+ function stableTextKey(node){
+  const parent=node.parentElement;
+  const parts=[];
+  let el=parent;
+  while(el&&el!==document.body){
+   if(el.id){parts.unshift('#'+el.id);break;}
+   let n=1;
+   for(let prev=el.previousElementSibling;prev;prev=prev.previousElementSibling)if(prev.tagName===el.tagName)n++;
+   parts.unshift(el.tagName.toLowerCase()+':'+n);
+   el=el.parentElement;
+  }
+  const textNodes=[...parent.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE);
+  return parts.join('/')+'/text:'+textNodes.indexOf(node);
+ }
+ function storeText(el){
+  const k=el.dataset.progKey;
+  if(!k)return;
+  saved[k]=el.textContent;
+  try{localStorage.setItem(STORE_KEY,JSON.stringify(saved));}catch(e){status.textContent='Изменение применено до закрытия страницы.';}
+ }
+ function applyMode(){
+  document.body.classList.toggle('prog-edit-mode',unlocked);
+  document.querySelectorAll('[data-prog-key]').forEach(el=>el.setAttribute('contenteditable',unlocked?'plaintext-only':'false'));
+  saveButton.hidden=!unlocked;
+  toggle.textContent=unlocked?'Закрыть редактуру':'Открыть редактуру';
+  if(!unlocked)keyInput.value='';
+ }
+ function scanTextNodes(){
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+   acceptNode(node){
+    if(!node.nodeValue||!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+    const p=node.parentElement;
+    if(!p||p.closest(excluded)||p.closest('[data-prog-key]'))return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+   }
+  });
+  const nodes=[];
+  while(walker.nextNode()){
+   const node=walker.currentNode;
+   nodes.push([node,stableTextKey(node)]);
+  }
+  for(const [node,key] of nodes){
+   const parent=node.parentNode;
+   if(!parent)continue;
+   const span=document.createElement('span');
+   span.className='prog-text';
+   span.dataset.progKey=key;
+   span.textContent=node.nodeValue;
+   if(Object.prototype.hasOwnProperty.call(saved,key))span.textContent=saved[key];
+   if(unlocked)span.setAttribute('contenteditable','plaintext-only');
+   else span.setAttribute('contenteditable','false');
+   parent.replaceChild(span,node);
+  }
+ }
+ scanTextNodes();
+ const observer=new MutationObserver(records=>{
+  let changed=false;
+  for(const r of records){
+   if(r.type==='childList'&&r.addedNodes.length){changed=true;break;}
+  }
+  if(changed)scanTextNodes();
+ });
+ observer.observe(document.body,{childList:true,subtree:true});
+
+ toggle.addEventListener('click',()=>{
+  if(unlocked){
+   unlocked=false;applyMode();
+   status.textContent='Редактирование закрыто. Изменения сохранены в этом браузере.';
+   return;
+  }
+  if((keyInput.value||'').trim().toUpperCase()==='PROG'){
+   unlocked=true;applyMode();
+   status.textContent='Редактор открыт: нажимайте на текст вне чертежей. Изменения сохраняются автоматически.';
+  }else{
+   status.textContent='Неверный ключ.';
+   keyInput.select();
+  }
+ });
+ keyInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();toggle.click();}});
+ document.addEventListener('input',e=>{
+  const host=e.target.closest?.('[data-prog-key]');
+  if(unlocked&&host)storeText(host);
+ });
+ document.addEventListener('focusout',e=>{
+  const host=e.target.closest?.('[data-prog-key]');
+  if(unlocked&&host)storeText(host);
+ },true);
+ document.addEventListener('keydown',e=>{
+  if(!unlocked)return;
+  const host=e.target.closest?.('[data-prog-key]');
+  if(!host)return;
+  if(e.key==='Enter'&&!e.shiftKey)e.preventDefault();
+  if(e.key==='Escape'){e.preventDefault();host.blur();}
+ });
+
+ // Кнопки и вкладки тоже можно переименовывать: в режиме PROG клик по их тексту не запускает действие.
+ document.addEventListener('click',e=>{
+  if(!unlocked)return;
+  const host=e.target.closest?.('[data-prog-key]');
+  if(!host||!host.closest('button,a,label'))return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  host.focus();
+  let range=null;
+  if(document.caretRangeFromPoint)range=document.caretRangeFromPoint(e.clientX,e.clientY);
+  else if(document.caretPositionFromPoint){
+   const pos=document.caretPositionFromPoint(e.clientX,e.clientY);
+   if(pos){range=document.createRange();range.setStart(pos.offsetNode,pos.offset);range.collapse(true);}
+  }
+  if(range){const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);}
+ },true);
+
+ saveButton.addEventListener('click',()=>{
+  const clone=document.documentElement.cloneNode(true);
+  clone.body.classList.remove('prog-edit-mode');
+  clone.querySelectorAll('[data-prog-key]').forEach(el=>el.removeAttribute('contenteditable'));
+  const cloneKey=clone.querySelector('#progKey');if(cloneKey){cloneKey.value='';cloneKey.removeAttribute('value');}
+  const cloneToggle=clone.querySelector('#progToggle');if(cloneToggle)cloneToggle.textContent='Открыть редактуру';
+  const cloneSave=clone.querySelector('#progSaveHtml');if(cloneSave)cloneSave.setAttribute('hidden','');
+  const cloneStatus=clone.querySelector('#progStatus');
+  if(cloneStatus)cloneStatus.textContent='Для редактирования введите ключ';
+  const appScript=clone.querySelector('body > script');
+  if(appScript){
+   const embeddedScript=document.createElement('script');
+   const embeddedJson=JSON.stringify(saved).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+   embeddedScript.textContent='window.__CRANE_PROG_TEXTS='+embeddedJson+';';
+   appScript.parentNode.insertBefore(embeddedScript,appScript);
+  }
+  const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='Кран_с_изменёнными_текстами.html';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1200);
+  status.textContent='HTML с изменёнными текстами сохранён.';
+ });
+}
+
+initFields();initEvents();drawAll();initProgTextEditor();
+</script>
+</body></html>
